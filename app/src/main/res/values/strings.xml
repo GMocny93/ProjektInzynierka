@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Praca inżynierska</string>
+
+    <string name="main">Start</string>
+    <string name="weight">Waga</string>
+    <string name="circuit">Pomiary obwodow</string>
+    <string name="information">Informacje</string>
+    <string name="author">O autorze</string>
+
+    <string name="abouthAuthor">Autor: Grzegorz Mocny \n \n Kontakt: mail@mail.com</string>
+
+    <string name="title_activity_pomiary">pomiary</string>
+
+
+    <string name="preferences">Preferencje użytkownika</string>
+    <string name="name">Imie</string>
+    <string name="height">Wzrost</string>
+    <string name="targetWeight">Waga docelowa</string>
+    <string name="age">Wiek</string>
+
+
+    <string name="witajTxt">Witaj</string>
+    <string name="wagaTxt">Twoja aktualna waga to:  </string>
+    <string name="RememberTxT">Pamiętaj! Jeśli coś się zmieniło, zaktualizuj pomiary w zakładce Informacje!</string>
+
+    <string name="weightInfo">Oto ostatnie pomiary wagi: </string>
+    <string name="circuitInfo">Oto ostatnie pomiary obwodow: </string>
+    <string name="startInformation">Witaj użytkowniku! \n \n Aby informacje o Tobie zostały tu wyświetlone musisz je najpierw uzypełnić w zakładce Informacje</string>
+    <string name="title_activity_weight">WeightActivity</string>
+
+    <string name="saveData">Zapisz Dane</string>
+</resources>
