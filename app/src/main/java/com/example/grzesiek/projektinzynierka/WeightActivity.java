@@ -3,6 +3,7 @@ package com.example.grzesiek.projektinzynierka;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,9 +29,12 @@ public class WeightActivity extends AppCompatActivity  {
         buttonDeleteWeight = (Button) findViewById(R.id.buttonDeleteWeight);
 
         dayEditText = (EditText) findViewById(R.id.dayEditText);
+        dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
         monthEditText = (EditText) findViewById(R.id.monthEditText);
+        monthEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","12")});
         yearEditText = (EditText) findViewById(R.id.yearEditText);
         weightEditText = (EditText) findViewById(R.id.weightEditText);
+
 
         buttonWeightList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +55,8 @@ public class WeightActivity extends AppCompatActivity  {
                     weight = Double.parseDouble(weightEditText.getText().toString());
 
                     db.addWeight(new weight(year, month, day, weight));
+                    Toast toast = Toast.makeText(WeightActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
+                    toast.show();
                 }catch (Exception e) {
                     Toast toast = Toast.makeText(WeightActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
                     toast.show();
@@ -70,6 +76,8 @@ public class WeightActivity extends AppCompatActivity  {
 
                     //usuwanie z bazy danych
 
+                    Toast toast = Toast.makeText(WeightActivity.this, "Operacja usuwania przebiegła pomyślnie", Toast.LENGTH_SHORT);
+                    toast.show();
                 }catch (Exception e) {
                     Toast toast = Toast.makeText(WeightActivity.this, "Nastąpił bład przy usuwaniu danych", Toast.LENGTH_SHORT);
                     toast.show();

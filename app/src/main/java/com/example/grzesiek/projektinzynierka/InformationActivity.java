@@ -3,6 +3,7 @@ package com.example.grzesiek.projektinzynierka;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,11 +27,14 @@ public class InformationActivity extends AppCompatActivity {
         final DatabaseHandler db = new DatabaseHandler(this);
 
     buttonSaveData = (Button) findViewById(R.id.buttonSaveData);
+
     nameEditText = (EditText) findViewById(R.id.nameEditText);
     heightEditText = (EditText) findViewById(R.id.heightEditText);
+    heightEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","280")});
     weightEditText = (EditText) findViewById(R.id.weightEditText);
     targetWeightEditText = (EditText) findViewById(R.id.targetWeightEditText);
     ageEditText = (EditText) findViewById(R.id.ageEditText);
+    ageEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","100")});
 
     buttonSaveData.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -43,6 +47,9 @@ public class InformationActivity extends AppCompatActivity {
                 age = Integer.parseInt(ageEditText.getText().toString());
 
                 db.addInformation(new information(name, height, weight, targetWeight, age));
+
+                Toast toast = Toast.makeText(InformationActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
+                toast.show();
             }catch (Exception e) {
                 Toast toast = Toast.makeText(InformationActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
                 toast.show();

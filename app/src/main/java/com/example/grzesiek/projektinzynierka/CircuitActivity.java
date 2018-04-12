@@ -3,6 +3,7 @@ package com.example.grzesiek.projektinzynierka;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,10 +29,13 @@ public class CircuitActivity extends AppCompatActivity {
         buttonDeleteCircuit = (Button) findViewById(R.id.buttonDeleteCircuit);
 
         dayEditText = (EditText) findViewById(R.id.dayEditText);
+        dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
         monthEditText = (EditText) findViewById(R.id.monthEditText);
+        monthEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","12")});
         yearEditText = (EditText) findViewById(R.id.yearEditText);
         chestEditText = (EditText) findViewById(R.id.chestEditText);
         waistEditText = (EditText) findViewById(R.id.waistEditText);
+
 
         buttonCircuitList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,9 @@ public class CircuitActivity extends AppCompatActivity {
                     waist = Double.parseDouble(waistEditText.getText().toString());
 
                     db.addCircuit(new circuit(year, month, day, chest, waist));
+
+                    Toast toast = Toast.makeText(CircuitActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
+                    toast.show();
                 }catch (Exception e) {
                     Toast toast = Toast.makeText(CircuitActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
                     toast.show();
@@ -73,6 +80,8 @@ public class CircuitActivity extends AppCompatActivity {
 
                     //usuwanie z bazy danych
 
+                    Toast toast = Toast.makeText(CircuitActivity.this, "Operacja usuwania przebiegła pomyślnie", Toast.LENGTH_SHORT);
+                    toast.show();
                 }catch (Exception e) {
                     Toast toast = Toast.makeText(CircuitActivity.this, "Nastąpił bład przy usuwaniu danych", Toast.LENGTH_SHORT);
                     toast.show();
