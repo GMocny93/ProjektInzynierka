@@ -15,14 +15,15 @@ public class WeightActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
-        buttonWeightList = (Button) findViewById(R.id.buttonWeightList);
+        buttonWeightList = (Button) findViewById(R.id.buttonCircuitList);
 
         buttonWeightList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WeightActivity.this, lista.class));
+                startActivity(new Intent(WeightActivity.this, activity_weightList.class));
             }
         });
+
 
     }
 
