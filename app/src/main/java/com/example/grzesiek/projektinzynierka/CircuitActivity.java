@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CircuitActivity extends AppCompatActivity {
     Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit;
@@ -44,13 +45,18 @@ public class CircuitActivity extends AppCompatActivity {
         buttonSaveCircuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                day = Integer.parseInt(dayEditText.getText().toString());
-                month = Integer.parseInt(monthEditText.getText().toString());
-                year = Integer.parseInt(yearEditText.getText().toString());
-                chest = Double.parseDouble(chestEditText.getText().toString());
-                waist = Double.parseDouble(waistEditText.getText().toString());
+                try {
+                    day = Integer.parseInt(dayEditText.getText().toString());
+                    month = Integer.parseInt(monthEditText.getText().toString());
+                    year = Integer.parseInt(yearEditText.getText().toString());
+                    chest = Double.parseDouble(chestEditText.getText().toString());
+                    waist = Double.parseDouble(waistEditText.getText().toString());
 
-                db.addCircuit(new circuit(year,month,day,chest,waist));
+                    db.addCircuit(new circuit(year, month, day, chest, waist));
+                }catch (Exception e) {
+                    Toast toast = Toast.makeText(CircuitActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
 
             }
         });
@@ -58,13 +64,19 @@ public class CircuitActivity extends AppCompatActivity {
         buttonDeleteCircuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                day = Integer.parseInt(dayEditText.getText().toString());
-                month = Integer.parseInt(monthEditText.getText().toString());
-                year = Integer.parseInt(yearEditText.getText().toString());
-                chest = Double.parseDouble(chestEditText.getText().toString());
-                waist = Double.parseDouble(waistEditText.getText().toString());
+                try {
+                    day = Integer.parseInt(dayEditText.getText().toString());
+                    month = Integer.parseInt(monthEditText.getText().toString());
+                    year = Integer.parseInt(yearEditText.getText().toString());
+                    chest = Double.parseDouble(chestEditText.getText().toString());
+                    waist = Double.parseDouble(waistEditText.getText().toString());
 
-                //usuwanie z bazy danych
+                    //usuwanie z bazy danych
+
+                }catch (Exception e) {
+                    Toast toast = Toast.makeText(CircuitActivity.this, "Nastąpił bład przy usuwaniu danych", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 

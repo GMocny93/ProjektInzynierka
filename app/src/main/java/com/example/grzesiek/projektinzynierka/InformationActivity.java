@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class InformationActivity extends AppCompatActivity {
     Button buttonSaveData;
@@ -34,7 +35,7 @@ public class InformationActivity extends AppCompatActivity {
     buttonSaveData.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            try {
                 name = (String) nameEditText.getText().toString();
                 height = Integer.parseInt(heightEditText.getText().toString());
                 weight = Double.parseDouble(weightEditText.getText().toString());
@@ -42,8 +43,10 @@ public class InformationActivity extends AppCompatActivity {
                 age = Integer.parseInt(ageEditText.getText().toString());
 
                 db.addInformation(new information(name, height, weight, targetWeight, age));
-
-
+            }catch (Exception e) {
+                Toast toast = Toast.makeText(InformationActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
+                toast.show();
+                }
         }
     });
     }

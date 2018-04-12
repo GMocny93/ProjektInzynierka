@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class WeightActivity extends AppCompatActivity  {
     Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
@@ -43,25 +44,36 @@ public class WeightActivity extends AppCompatActivity  {
         buttonSaveWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                day = Integer.parseInt(dayEditText.getText().toString());
-                month = Integer.parseInt(monthEditText.getText().toString());
-                year = Integer.parseInt(yearEditText.getText().toString());
-                weight = Double.parseDouble(weightEditText.getText().toString());
+                try {
+                    day = Integer.parseInt(dayEditText.getText().toString());
+                    month = Integer.parseInt(monthEditText.getText().toString());
+                    year = Integer.parseInt(yearEditText.getText().toString());
+                    weight = Double.parseDouble(weightEditText.getText().toString());
 
-                db.addWeight(new weight(year,month,day,weight));
-                //dodawanie do bazy danych
+                    db.addWeight(new weight(year, month, day, weight));
+                }catch (Exception e) {
+                    Toast toast = Toast.makeText(WeightActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
             }
         });
 
         buttonDeleteWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                day = Integer.parseInt(dayEditText.getText().toString());
-                month = Integer.parseInt(monthEditText.getText().toString());
-                year = Integer.parseInt(yearEditText.getText().toString());
-                weight = Double.parseDouble(weightEditText.getText().toString());
+                try {
+                    day = Integer.parseInt(dayEditText.getText().toString());
+                    month = Integer.parseInt(monthEditText.getText().toString());
+                    year = Integer.parseInt(yearEditText.getText().toString());
+                    weight = Double.parseDouble(weightEditText.getText().toString());
 
-                //usuwanie z bazy danych
+                    //usuwanie z bazy danych
+
+                }catch (Exception e) {
+                    Toast toast = Toast.makeText(WeightActivity.this, "Nastąpił bład przy usuwaniu danych", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
 
 
             }
