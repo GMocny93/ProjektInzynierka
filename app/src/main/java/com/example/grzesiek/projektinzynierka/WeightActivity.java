@@ -19,6 +19,9 @@ public class WeightActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
+
+        final DatabaseHandler db = new DatabaseHandler(this);
+
         buttonWeightList = (Button) findViewById(R.id.buttonCircuitList);
         buttonSaveWeight = (Button) findViewById(R.id.buttonSaveCircuit);
         buttonDeleteWeight = (Button) findViewById(R.id.buttonDeleteWeight);
@@ -45,6 +48,7 @@ public class WeightActivity extends AppCompatActivity  {
                 year = Integer.parseInt(yearEditText.getText().toString());
                 weight = Double.parseDouble(weightEditText.getText().toString());
 
+                db.addWeight(new weight(year,month,day,weight));
                 //dodawanie do bazy danych
             }
         });

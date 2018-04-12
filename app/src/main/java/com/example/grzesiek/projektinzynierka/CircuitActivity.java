@@ -19,6 +19,9 @@ public class CircuitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circuit);
+
+        final DatabaseHandler db = new DatabaseHandler(this);
+
         buttonCircuitList = (Button) findViewById(R.id.buttonCircuitList);
         buttonSaveCircuit = (Button) findViewById(R.id.buttonSaveCircuit);
         buttonDeleteCircuit = (Button) findViewById(R.id.buttonDeleteCircuit);
@@ -47,7 +50,7 @@ public class CircuitActivity extends AppCompatActivity {
                 chest = Double.parseDouble(chestEditText.getText().toString());
                 waist = Double.parseDouble(waistEditText.getText().toString());
 
-                //dodawanie do bazy danych
+                db.addCircuit(new circuit(year,month,day,chest,waist));
 
             }
         });

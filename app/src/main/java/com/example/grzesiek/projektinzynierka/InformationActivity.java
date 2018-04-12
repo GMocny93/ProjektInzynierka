@@ -16,10 +16,13 @@ public class InformationActivity extends AppCompatActivity {
     int height, age;
     double weight, targetWeight;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
+
+        final DatabaseHandler db = new DatabaseHandler(this);
 
     buttonSaveData = (Button) findViewById(R.id.buttonSaveData);
     nameEditText = (EditText) findViewById(R.id.nameEditText);
@@ -31,13 +34,15 @@ public class InformationActivity extends AppCompatActivity {
     buttonSaveData.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            name = (String) nameEditText.getText().toString();
-            height = Integer.parseInt(heightEditText.getText().toString());
-            weight = Double.parseDouble(weightEditText.getText().toString());
-            targetWeight = Double.parseDouble(targetWeightEditText.getText().toString());
-            age = Integer.parseInt(ageEditText.getText().toString());
 
-            //dodawanie do bazy danych
+                name = (String) nameEditText.getText().toString();
+                height = Integer.parseInt(heightEditText.getText().toString());
+                weight = Double.parseDouble(weightEditText.getText().toString());
+                targetWeight = Double.parseDouble(targetWeightEditText.getText().toString());
+                age = Integer.parseInt(ageEditText.getText().toString());
+
+                db.addInformation(new information(name, height, weight, targetWeight, age));
+
 
         }
     });

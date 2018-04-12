@@ -59,6 +59,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    public DatabaseHandler(InformationActivity context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public DatabaseHandler(WeightActivity context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public DatabaseHandler(CircuitActivity context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
     //creating tables
 
     @Override
