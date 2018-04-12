@@ -7,20 +7,61 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class CircuitActivity extends AppCompatActivity {
-    Button buttonCircuitList;
+    Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit;
+    EditText dayEditText, monthEditText, yearEditText, chestEditText, waistEditText;
+    int day, month, year;
+    double chest, waist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circuit);
         buttonCircuitList = (Button) findViewById(R.id.buttonCircuitList);
+        buttonSaveCircuit = (Button) findViewById(R.id.buttonSaveCircuit);
+        buttonDeleteCircuit = (Button) findViewById(R.id.buttonDeleteCircuit);
+
+        dayEditText = (EditText) findViewById(R.id.dayEditText);
+        monthEditText = (EditText) findViewById(R.id.monthEditText);
+        yearEditText = (EditText) findViewById(R.id.yearEditText);
+        chestEditText = (EditText) findViewById(R.id.chestEditText);
+        waistEditText = (EditText) findViewById(R.id.waistEditText);
 
         buttonCircuitList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(CircuitActivity.this, activity_circuitList.class));
+
+                //dodać wykres z pomiarów i pod nim listView z pomiarami
+            }
+        });
+
+        buttonSaveCircuit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                day = Integer.parseInt(dayEditText.getText().toString());
+                month = Integer.parseInt(monthEditText.getText().toString());
+                year = Integer.parseInt(yearEditText.getText().toString());
+                chest = Double.parseDouble(chestEditText.getText().toString());
+                waist = Double.parseDouble(waistEditText.getText().toString());
+
+                //dodawanie do bazy danych
+
+            }
+        });
+
+        buttonDeleteCircuit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                day = Integer.parseInt(dayEditText.getText().toString());
+                month = Integer.parseInt(monthEditText.getText().toString());
+                year = Integer.parseInt(yearEditText.getText().toString());
+                chest = Double.parseDouble(chestEditText.getText().toString());
+                waist = Double.parseDouble(waistEditText.getText().toString());
+
+                //usuwanie z bazy danych
             }
         });
 

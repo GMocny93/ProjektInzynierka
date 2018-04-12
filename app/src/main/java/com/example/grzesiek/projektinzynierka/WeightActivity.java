@@ -7,20 +7,59 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class WeightActivity extends AppCompatActivity  {
-    Button buttonWeightList;
+    Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
+    EditText dayEditText, monthEditText, yearEditText, weightEditText;
+    int day, month, year;
+    double weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
         buttonWeightList = (Button) findViewById(R.id.buttonCircuitList);
+        buttonSaveWeight = (Button) findViewById(R.id.buttonSaveCircuit);
+        buttonDeleteWeight = (Button) findViewById(R.id.buttonDeleteWeight);
+
+        dayEditText = (EditText) findViewById(R.id.dayEditText);
+        monthEditText = (EditText) findViewById(R.id.monthEditText);
+        yearEditText = (EditText) findViewById(R.id.yearEditText);
+        weightEditText = (EditText) findViewById(R.id.weightEditText);
 
         buttonWeightList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(WeightActivity.this, activity_weightList.class));
+
+                //dodać wykres z pomiarów i pod nim listView z pomiarami
+            }
+        });
+
+        buttonSaveWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                day = Integer.parseInt(dayEditText.getText().toString());
+                month = Integer.parseInt(monthEditText.getText().toString());
+                year = Integer.parseInt(yearEditText.getText().toString());
+                weight = Double.parseDouble(weightEditText.getText().toString());
+
+                //dodawanie do bazy danych
+            }
+        });
+
+        buttonDeleteWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                day = Integer.parseInt(dayEditText.getText().toString());
+                month = Integer.parseInt(monthEditText.getText().toString());
+                year = Integer.parseInt(yearEditText.getText().toString());
+                weight = Double.parseDouble(weightEditText.getText().toString());
+
+                //usuwanie z bazy danych
+
+
             }
         });
 

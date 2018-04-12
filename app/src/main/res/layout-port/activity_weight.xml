@@ -101,7 +101,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/weightEditText"
+                android:id="@+id/yearEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -123,7 +123,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/targetWeightEditText"
+                android:id="@+id/weightEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"

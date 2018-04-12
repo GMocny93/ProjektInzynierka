@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class InformationActivity extends AppCompatActivity {
     Button buttonSaveData;
     EditText nameEditText, heightEditText, weightEditText, targetWeightEditText, ageEditText;
-    String name, heightString, weightString, targetWeightString, ageString;
+    String name;
     int height, age;
     double weight, targetWeight;
 
@@ -32,14 +32,13 @@ public class InformationActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             name = (String) nameEditText.getText().toString();
-            heightString = (String) heightEditText.getText().toString();
-            height = Integer.parseInt(heightString);
-            weightString = (String) weightEditText.getText().toString();
-            weight = Double.parseDouble(weightString);
-            targetWeightString = (String) targetWeightEditText.getText().toString();
-            targetWeight = Double.parseDouble(targetWeightString);
-            ageString = (String) ageEditText.getText().toString();
-            age = Integer.parseInt(ageString);
+            height = Integer.parseInt(heightEditText.getText().toString());
+            weight = Double.parseDouble(weightEditText.getText().toString());
+            targetWeight = Double.parseDouble(targetWeightEditText.getText().toString());
+            age = Integer.parseInt(ageEditText.getText().toString());
+
+            //dodawanie do bazy danych
+
         }
     });
     }
