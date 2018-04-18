@@ -18,9 +18,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "databaseApp";
 
     //information tabele name
+
+
     private static final String TABLE_INFORMATION = "information";
 
-    //information table columns name
     private static final String INF_ID = "id";
     private static final String INF_NAME = "name";
     private static final String INF_HEIGHT = "height";
@@ -55,9 +56,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public DatabaseHandler(lista context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
 
     public DatabaseHandler(InformationActivity context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -71,11 +69,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    public DatabaseHandler(activity_weightList context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public DatabaseHandler(activity_circuitList context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
     //creating tables
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //information table
         String CREATE_INFROMATION_TABLE = "CREATE TABLE " + TABLE_INFORMATION + "("
                 + INF_ID + " INTEGER PRIMARY KEY," + INF_NAME + " TEXT,"
                 + INF_HEIGHT + " INT," + INF_WEIGHT + " REAL,"
@@ -94,8 +99,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_INFROMATION_TABLE);
         db.execSQL(CREATE_WEIGHT_TABLE);
         db.execSQL(CREATE_OB_TABLE);
-
-
 
     }
 
