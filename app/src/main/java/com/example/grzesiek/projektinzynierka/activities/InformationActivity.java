@@ -31,19 +31,19 @@ public class InformationActivity extends AppCompatActivity {
 
         final DatabaseHandler db = new DatabaseHandler(this);
 
-    buttonSaveData = (Button) findViewById(R.id.buttonSaveData);
+        buttonSaveData = (Button) findViewById(R.id.buttonSaveData);
 
-    nameEditText = (EditText) findViewById(R.id.nameEditText);
-    heightEditText = (EditText) findViewById(R.id.heightEditText);
-    heightEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","280")});
-    weightEditText = (EditText) findViewById(R.id.weightEditText);
-    targetWeightEditText = (EditText) findViewById(R.id.targetWeightEditText);
-    ageEditText = (EditText) findViewById(R.id.ageEditText);
-    ageEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","100")});
+        nameEditText = (EditText) findViewById(R.id.nameEditText);
+        heightEditText = (EditText) findViewById(R.id.heightEditText);
+        heightEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","280")});
+        weightEditText = (EditText) findViewById(R.id.weightEditText);
+        targetWeightEditText = (EditText) findViewById(R.id.targetWeightEditText);
+        ageEditText = (EditText) findViewById(R.id.ageEditText);
+        ageEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","100")});
 
-    buttonSaveData.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
+        buttonSaveData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
             try {
                 name = (String) nameEditText.getText().toString();
                 height = Integer.parseInt(heightEditText.getText().toString());
@@ -53,17 +53,14 @@ public class InformationActivity extends AppCompatActivity {
 
                 db.addInformation(new Information(name, height, weight, targetWeight, age));
 
-                Toast toast = Toast.makeText(InformationActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
-                toast.show();
-            }catch (Exception e) {
-                Toast toast = Toast.makeText(InformationActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(InformationActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(InformationActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT).show();
                 }
         }
     });
     }
 
-    // MENU
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
@@ -111,6 +108,5 @@ public class InformationActivity extends AppCompatActivity {
     public void loadAuthor() {
         startActivity(new Intent(InformationActivity.this, AuthorActivity.class));
     }
-
 }
 

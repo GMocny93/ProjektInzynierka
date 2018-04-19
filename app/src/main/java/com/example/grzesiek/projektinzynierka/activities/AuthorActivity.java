@@ -16,7 +16,6 @@ public class AuthorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_author);
     }
 
-    // MENU
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;

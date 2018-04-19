@@ -16,13 +16,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView newInformation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        TextView newInformation = (TextView) findViewById(R.id.informationTextView);
+        newInformation = (TextView) findViewById(R.id.informationTextView);
 
         DatabaseHandler db = new DatabaseHandler(this);
 
@@ -47,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // MENU
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.start:
@@ -93,6 +92,5 @@ public class MainActivity extends AppCompatActivity {
     public void loadAuthor() {
         startActivity(new Intent(MainActivity.this, AuthorActivity.class));
     }
-
 }
 

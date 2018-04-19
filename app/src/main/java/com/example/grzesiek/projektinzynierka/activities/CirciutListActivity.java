@@ -7,7 +7,6 @@ import android.widget.ListView;
 import com.example.grzesiek.projektinzynierka.R;
 
 public class CirciutListActivity extends AppCompatActivity {
-    ListView listViewl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

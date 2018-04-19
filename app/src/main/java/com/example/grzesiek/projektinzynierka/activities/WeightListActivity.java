@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WeightListActivity extends AppCompatActivity {
-
     private ListView list;
 
     @Override

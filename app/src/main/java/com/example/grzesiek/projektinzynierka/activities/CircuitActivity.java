@@ -96,7 +96,6 @@ public class CircuitActivity extends AppCompatActivity {
 */
     }
 
-    // MENU
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
@@ -144,5 +143,4 @@ public class CircuitActivity extends AppCompatActivity {
     public void loadAuthor() {
         startActivity(new Intent(CircuitActivity.this, AuthorActivity.class));
     }
-
 }
