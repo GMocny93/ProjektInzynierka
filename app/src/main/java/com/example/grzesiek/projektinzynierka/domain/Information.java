@@ -2,90 +2,80 @@ package com.example.grzesiek.projektinzynierka.domain;
 
 
 public class Information {
+    private int id;
+    private String name;
+    private int height;
+    private double weight;
+    private double targetWeight;
+    private int age;
 
-    private int _id;
-    private String _name;
-    private int _height;
-    private double _weight;
-    private double _targetWeight;
-    private int _age;
 
-    //empty constructor
     public Information() {
     }
 
-    //all main Information
     public Information(int id, String name, int height, double weight, double targetWeight, int age) {
-        this._id = id;
-        this._name = name;
-        this._height = height;
-        this._weight = weight;
-        this._targetWeight = targetWeight;
-        this._age = age;
+        this.id = id;
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.targetWeight = targetWeight;
+        this.age = age;
     }
 
-    //all main Information, no id
     public Information(String name, int height, double weight, double targetWeight, int age) {
-        this._name = name;
-        this._height = height;
-        this._weight = weight;
-        this._targetWeight = targetWeight;
-        this._age = age;
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.targetWeight = targetWeight;
+        this.age = age;
     }
 
-    //GETTERS SETTERS
-    //id
     public int getId() {
-        return this._id;
+        return this.id;
     }
 
     public void setId(int id) {
-        this._id = id;
+        this.id = id;
     }
 
-    //name
     public String getName() {
-        return this._name;
+        return this.name;
     }
 
     public void setName(String name) {
-        this._name = name;
+        this.name = name;
     }
 
-    //height
     public int getHeight() {
-        return this._height;
+        return this.height;
     }
 
     public void setHeight(int height) {
-        this._height = height;
+        this.height = height;
     }
 
-    //Weight
     public double getWeight() {
-        return this._weight;
+        return this.weight;
     }
 
     public void setWeight(double weight) {
-        this._weight = weight;
+        this.weight = weight;
     }
 
-    //targetWeight
     public double getTargetWeight() {
-        return this._targetWeight;
+        return this.targetWeight;
     }
 
     public void setTargetWeight(double targetWeight) {
-        this._targetWeight = targetWeight;
+        this.targetWeight = targetWeight;
     }
 
-    //age
     public int getAge() {
-        return this._age;
+        return this.age;
     }
 
     public void setAge(int age) {
-        this._age = age;
+        this.age = age;
     }
 }
 

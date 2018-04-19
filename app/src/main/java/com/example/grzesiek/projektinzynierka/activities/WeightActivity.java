@@ -1,4 +1,4 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.grzesiek.projektinzynierka.activities.AuthorActivity;
-import com.example.grzesiek.projektinzynierka.activities.CircuitActivity;
-import com.example.grzesiek.projektinzynierka.activities.InformationActivity;
+import com.example.grzesiek.projektinzynierka.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.InputFilterMinMax;
+import com.example.grzesiek.projektinzynierka.R;
 import com.example.grzesiek.projektinzynierka.domain.Weight;
 
 public class WeightActivity extends AppCompatActivity  {

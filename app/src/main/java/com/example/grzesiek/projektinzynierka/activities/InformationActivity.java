@@ -13,9 +13,7 @@ import android.widget.Toast;
 
 import com.example.grzesiek.projektinzynierka.DatabaseHandler;
 import com.example.grzesiek.projektinzynierka.InputFilterMinMax;
-import com.example.grzesiek.projektinzynierka.MainActivity;
 import com.example.grzesiek.projektinzynierka.R;
-import com.example.grzesiek.projektinzynierka.WeightActivity;
 import com.example.grzesiek.projektinzynierka.domain.Information;
 
 public class InformationActivity extends AppCompatActivity {

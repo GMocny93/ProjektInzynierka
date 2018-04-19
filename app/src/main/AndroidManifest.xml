@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,10 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.CircuitActivity" />
-        <activity android:name=".WeightActivity" />
+        <activity android:name=".activities.WeightActivity" />
         <activity android:name=".activities.InformationActivity" />
         <activity android:name=".activities.AuthorActivity" />
-        <activity android:name=".WeightListActivity"/>
+        <activity android:name=".activities.WeightListActivity"/>
         <activity android:name=".activities.CirciutListActivity"/>
     </application>
 
