@@ -86,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, InformationActivity.class));
     }
 
-
     public void loadAuthor() {
         startActivity(new Intent(MainActivity.this, AuthorActivity.class));
     }
 
 }
+

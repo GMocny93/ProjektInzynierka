@@ -26,7 +26,6 @@ public class CircuitActivity extends AppCompatActivity {
 
         buttonCircuitList = (Button) findViewById(R.id.buttonCircuitList);
         buttonSaveCircuit = (Button) findViewById(R.id.buttonSaveCircuit);
-        buttonDeleteCircuit = (Button) findViewById(R.id.buttonDeleteCircuit);
 
         dayEditText = (EditText) findViewById(R.id.dayEditText);
         dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
@@ -68,6 +67,7 @@ public class CircuitActivity extends AppCompatActivity {
             }
         });
 
+/*
         buttonDeleteCircuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +88,7 @@ public class CircuitActivity extends AppCompatActivity {
                 }
             }
         });
-
+*/
     }
 
     // MENU

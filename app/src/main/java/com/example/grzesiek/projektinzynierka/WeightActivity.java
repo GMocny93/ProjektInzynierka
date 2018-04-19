@@ -26,7 +26,7 @@ public class WeightActivity extends AppCompatActivity  {
 
         buttonWeightList = (Button) findViewById(R.id.buttonCircuitList);
         buttonSaveWeight = (Button) findViewById(R.id.buttonSaveCircuit);
-        buttonDeleteWeight = (Button) findViewById(R.id.buttonDeleteWeight);
+
 
         dayEditText = (EditText) findViewById(R.id.dayEditText);
         dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
@@ -64,7 +64,7 @@ public class WeightActivity extends AppCompatActivity  {
 
             }
         });
-
+/*
         buttonDeleteWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +86,7 @@ public class WeightActivity extends AppCompatActivity  {
 
             }
         });
+*/
 
 
     }

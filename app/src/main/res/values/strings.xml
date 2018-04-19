@@ -7,12 +7,12 @@
     <string name="information">Informacje</string>
     <string name="author">O autorze</string>
 
-    <string name="abouthAuthor">Autor: G M \n \n Kontakt: mail@mail.com</string>
+    <string name="abouthAuthor">Autor aplikacji: \n  Grzegorz Mocny \n \n \n Kontakt: \n grzegorz.mocny93@gmail.com \n \n \n \n Aplikacja została stworzona jako praca inżynierska.</string>
 
     <string name="title_activity_pomiary">pomiary</string>
 
 
-    <string name="preferences">Preferencje użytkownika</string>
+    <string name="preferences">Informacje o użytkowniku:</string>
     <string name="name">Imie</string>
     <string name="height">Wzrost</string>
     <string name="targetWeight">Waga docelowa</string>
