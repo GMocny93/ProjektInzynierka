@@ -1,4 +1,4 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.grzesiek.projektinzynierka.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.InputFilterMinMax;
+import com.example.grzesiek.projektinzynierka.MainActivity;
+import com.example.grzesiek.projektinzynierka.R;
+import com.example.grzesiek.projektinzynierka.WeightActivity;
+import com.example.grzesiek.projektinzynierka.domain.Circuit;
 
 public class CircuitActivity extends AppCompatActivity {
     private Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit;

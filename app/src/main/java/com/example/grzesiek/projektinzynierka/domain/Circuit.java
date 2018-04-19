@@ -1,31 +1,32 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.domain;
 
 
-
-public class Weight {
-
+public class Circuit {
     private int _id;
     private int _year;
     private int _month;
     private int _day;
-    private double _weight;
+    private double _chest;
+    private double _waist;
 
 
-    public Weight() {
+    public Circuit() {
     }
 
-    public Weight(int id, int year, int month, int day, double weight){
+    public Circuit(int id, int year, int month, int day, double chest, double waist){
         this._id = id;
         this._year = year;
         this._month = month;
         this._day = day;
-        this._weight = weight;
+        this._chest = chest;
+        this._waist = waist;
     }
-    public Weight(int year, int month, int day, double weight){
+    public Circuit(int year, int month, int day, double chest, double waist){
         this._year = year;
         this._month = month;
         this._day = day;
-        this._weight = weight;
+        this._chest = chest;
+        this._waist = waist;
     }
 
     //GETTERS SETTERS
@@ -65,12 +66,20 @@ public class Weight {
     }
 
     //WGweight
-    public double getWeight() {
-        return this._weight;
+    public double getChest() {
+        return this._chest;
     }
 
-    public void setWeight(double weight) {
-        this._weight = weight;
+    public void setChest(double chest) {
+        this._chest = chest;
+    }
+
+    public double getWaist() {
+        return this._waist;
+    }
+
+    public void setWaist(double waist) {
+        this._waist = waist;
     }
 
 

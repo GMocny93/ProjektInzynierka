@@ -1,8 +1,12 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
+import com.example.grzesiek.projektinzynierka.CustomAdapterCircuit;
+import com.example.grzesiek.projektinzynierka.DataModelCircuit;
+import com.example.grzesiek.projektinzynierka.R;
 
 import java.util.ArrayList;
 

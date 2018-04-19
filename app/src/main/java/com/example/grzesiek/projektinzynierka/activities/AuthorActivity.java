@@ -1,10 +1,14 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.grzesiek.projektinzynierka.MainActivity;
+import com.example.grzesiek.projektinzynierka.R;
+import com.example.grzesiek.projektinzynierka.WeightActivity;
 
 public class AuthorActivity extends AppCompatActivity {
 

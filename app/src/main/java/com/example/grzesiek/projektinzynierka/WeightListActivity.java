@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.grzesiek.projektinzynierka.domain.Circuit;
+import com.example.grzesiek.projektinzynierka.domain.Information;
+import com.example.grzesiek.projektinzynierka.domain.Weight;
+
 import java.util.ArrayList;
 import java.util.List;
 

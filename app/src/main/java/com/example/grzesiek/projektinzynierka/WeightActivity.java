@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.grzesiek.projektinzynierka.activities.AuthorActivity;
+import com.example.grzesiek.projektinzynierka.activities.CircuitActivity;
+import com.example.grzesiek.projektinzynierka.activities.InformationActivity;
+import com.example.grzesiek.projektinzynierka.domain.Weight;
+
 public class WeightActivity extends AppCompatActivity  {
     private Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
     private EditText dayEditText, monthEditText, yearEditText, weightEditText;
