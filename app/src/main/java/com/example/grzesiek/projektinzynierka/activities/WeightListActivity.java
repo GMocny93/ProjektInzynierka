@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.grzesiek.projektinzynierka.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
 import com.example.grzesiek.projektinzynierka.R;
 import com.example.grzesiek.projektinzynierka.domain.Circuit;
 import com.example.grzesiek.projektinzynierka.domain.Information;

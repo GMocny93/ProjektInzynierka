@@ -1,4 +1,4 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.utils;
 
 import android.text.InputFilter;
 import android.text.Spanned;

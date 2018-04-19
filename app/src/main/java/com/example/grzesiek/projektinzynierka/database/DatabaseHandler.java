@@ -1,4 +1,4 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.database;
 
 
 import android.content.ContentValues;

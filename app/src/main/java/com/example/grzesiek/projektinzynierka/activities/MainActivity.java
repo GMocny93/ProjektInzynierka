@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.grzesiek.projektinzynierka.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
 import com.example.grzesiek.projektinzynierka.R;
 import com.example.grzesiek.projektinzynierka.domain.Information;
 
