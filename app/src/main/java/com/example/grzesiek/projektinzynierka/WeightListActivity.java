@@ -2,17 +2,24 @@ package com.example.grzesiek.projektinzynierka;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toolbar;
 
-public class WeightListActivity extends ListActivity {
-    private ListView list ;
-    private ArrayAdapter<String> adapter;
+import java.util.ArrayList;
+
+public class WeightListActivity extends AppCompatActivity {
+
+    ArrayList<DataModelWeight> dataModelWeights;
+    ListView listViewl;
+    private static CustomAdapterWeight WeightAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight_list);
+
 /*
         DatabaseHandler db = new DatabaseHandler(this);
 
