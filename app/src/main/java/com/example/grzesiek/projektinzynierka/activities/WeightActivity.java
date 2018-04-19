@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.grzesiek.projektinzynierka.dao.WeightDAO;
+import com.example.grzesiek.projektinzynierka.dao.WeightDAOimpl;
 import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
 import com.example.grzesiek.projektinzynierka.utils.InputFilterMinMax;
 import com.example.grzesiek.projektinzynierka.R;
@@ -21,6 +23,7 @@ public class WeightActivity extends AppCompatActivity  {
     private EditText dayEditText, monthEditText, yearEditText, weightEditText;
     private int day, month, year;
     private double weight;
+    private WeightDAO weightDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class WeightActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_weight);
 
         final DatabaseHandler db = new DatabaseHandler(this);
+        weightDAO = new WeightDAOimpl(db);
 
         buttonWeightList = (Button) findViewById(R.id.buttonCircuitList);
         buttonSaveWeight = (Button) findViewById(R.id.buttonSaveCircuit);
@@ -57,7 +61,7 @@ public class WeightActivity extends AppCompatActivity  {
                     year = Integer.parseInt(yearEditText.getText().toString());
                     weight = Double.parseDouble(weightEditText.getText().toString());
 
-                    db.addWeight(new Weight(year, month, day, weight));
+                    weightDAO.addWeight(new Weight(year, month, day, weight));
                     Toast toast = Toast.makeText(WeightActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                     toast.show();
                 }catch (Exception e) {
