@@ -2,12 +2,12 @@ package com.example.grzesiek.projektinzynierka;
 
 
 public class Circuit {
-    int _id;
-    int _year;
-    int _month;
-    int _day;
-    double _chest;
-    double _waist;
+    private int _id;
+    private int _year;
+    private int _month;
+    private int _day;
+    private double _chest;
+    private double _waist;
 
 
     public Circuit() {

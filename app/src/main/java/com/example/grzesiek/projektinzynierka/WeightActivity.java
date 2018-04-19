@@ -12,10 +12,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class WeightActivity extends AppCompatActivity  {
-    Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
-    EditText dayEditText, monthEditText, yearEditText, weightEditText;
-    int day, month, year;
-    double weight;
+    private Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
+    private EditText dayEditText, monthEditText, yearEditText, weightEditText;
+    private int day, month, year;
+    private double weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

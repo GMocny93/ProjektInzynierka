@@ -3,12 +3,12 @@ package com.example.grzesiek.projektinzynierka;
 
 public class Information {
 
-    int _id;
-    String _name;
-    int _height;
-    double _weight;
-    double _targetWeight;
-    int _age;
+    private int _id;
+    private String _name;
+    private int _height;
+    private double _weight;
+    private double _targetWeight;
+    private int _age;
 
     //empty constructor
     public Information() {

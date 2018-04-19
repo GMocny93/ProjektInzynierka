@@ -12,11 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class InformationActivity extends AppCompatActivity {
-    Button buttonSaveData;
-    EditText nameEditText, heightEditText, weightEditText, targetWeightEditText, ageEditText;
-    String name;
-    int height, age;
-    double weight, targetWeight;
+    private Button buttonSaveData;
+    private EditText nameEditText, heightEditText, weightEditText, targetWeightEditText, ageEditText;
+    private String name;
+    private int height, age;
+    private double weight, targetWeight;
 
 
     @Override

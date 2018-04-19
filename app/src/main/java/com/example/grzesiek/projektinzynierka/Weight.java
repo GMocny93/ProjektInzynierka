@@ -4,11 +4,11 @@ package com.example.grzesiek.projektinzynierka;
 
 public class Weight {
 
-    int _id;
-    int _year;
-    int _month;
-    int _day;
-    double _weight;
+    private int _id;
+    private int _year;
+    private int _month;
+    private int _day;
+    private double _weight;
 
 
     public Weight() {

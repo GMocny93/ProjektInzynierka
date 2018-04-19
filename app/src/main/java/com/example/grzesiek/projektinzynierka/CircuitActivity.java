@@ -12,10 +12,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class CircuitActivity extends AppCompatActivity {
-    Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit;
-    EditText dayEditText, monthEditText, yearEditText, chestEditText, waistEditText;
-    int day, month, year;
-    double chest, waist;
+    private Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit;
+    private EditText dayEditText, monthEditText, yearEditText, chestEditText, waistEditText;
+    private int day, month, year;
+    private double chest, waist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
