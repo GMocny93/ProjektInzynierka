@@ -55,7 +55,7 @@ public class CircuitActivity extends AppCompatActivity {
                     chest = Double.parseDouble(chestEditText.getText().toString());
                     waist = Double.parseDouble(waistEditText.getText().toString());
 
-                    db.addCircuit(new circuit(year, month, day, chest, waist));
+                    db.addCircuit(new Circuit(year, month, day, chest, waist));
 
                     Toast toast = Toast.makeText(CircuitActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                     toast.show();

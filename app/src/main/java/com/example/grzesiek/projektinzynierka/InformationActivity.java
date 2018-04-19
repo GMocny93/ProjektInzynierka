@@ -46,7 +46,7 @@ public class InformationActivity extends AppCompatActivity {
                 targetWeight = Double.parseDouble(targetWeightEditText.getText().toString());
                 age = Integer.parseInt(ageEditText.getText().toString());
 
-                db.addInformation(new information(name, height, weight, targetWeight, age));
+                db.addInformation(new Information(name, height, weight, targetWeight, age));
 
                 Toast toast = Toast.makeText(InformationActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                 toast.show();

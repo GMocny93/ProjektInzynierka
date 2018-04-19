@@ -54,7 +54,7 @@ public class WeightActivity extends AppCompatActivity  {
                     year = Integer.parseInt(yearEditText.getText().toString());
                     weight = Double.parseDouble(weightEditText.getText().toString());
 
-                    db.addWeight(new weight(year, month, day, weight));
+                    db.addWeight(new Weight(year, month, day, weight));
                     Toast toast = Toast.makeText(WeightActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                     toast.show();
                 }catch (Exception e) {
@@ -72,7 +72,7 @@ public class WeightActivity extends AppCompatActivity  {
                     day = Integer.parseInt(dayEditText.getText().toString());
                     month = Integer.parseInt(monthEditText.getText().toString());
                     year = Integer.parseInt(yearEditText.getText().toString());
-                    weight = Double.parseDouble(weightEditText.getText().toString());
+                    Weight = Double.parseDouble(weightEditText.getText().toString());
 
                     //usuwanie z bazy danych
 
