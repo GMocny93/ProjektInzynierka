@@ -20,15 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
-
-    //database verion
     private static final int DATABASE_VERSION = 1;
-
-    //database name
     private static final String DATABASE_NAME = "databaseApp";
-
-    //Information tabele name
-
 
     private static final String TABLE_INFORMATION = "information";
 
@@ -39,7 +32,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String INF_TARGETWEIGHT = "targetWeight";
     private static final String INF_AGE = "age";
 
-
     private static final String TABLE_WEIGHT = "weight";
 
     private static final String WG_ID = "id";
@@ -47,7 +39,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String WG_MONTH = "month";
     private static final String WG_DAY = "day";
     private static final String WG_WEIGHT = "weight";
-
 
     private static final String TABLE_CIRCUIT = "circuit";
 
@@ -57,9 +48,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String OB_DAY = "day";
     private static final String OB_CHEST = "chest";
     private static final String OB_WAIST = "waist";
-
-
-
 
 
     public DatabaseHandler(MainActivity context) {
@@ -88,7 +76,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    //creating tables
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -113,16 +100,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-
-    //upgrading database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_INFORMATION);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEIGHT);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CIRCUIT);
 
-        //create tables again
         onCreate(db);
     }
 
@@ -167,7 +150,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-    //gettign single infomration
+    //getting single information
     public Information getInformation(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_INFORMATION, new String[]{INF_ID, INF_NAME,
@@ -183,7 +166,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return information;
     }
 
-    public Weight getWaight(int id){
+    public Weight getWeight(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_WEIGHT, new String[]{WG_ID, WG_YEAR, WG_MONTH, WG_DAY, WG_WEIGHT},
                 WG_ID + "=?", new String[] {String.valueOf(id)},
@@ -212,7 +195,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-    //getting all infortmacion
+    //getting all information
     public List<Information> getAllInformation() {
         List<Information> informationList = new ArrayList<Information>();
         String selectQuery = "SELECT * FROM " + TABLE_INFORMATION;
@@ -337,5 +320,4 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[]{String.valueOf(circuit.getId())});
         db.close();
     }
-
 }
