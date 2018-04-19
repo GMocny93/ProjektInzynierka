@@ -5,9 +5,9 @@ package com.example.grzesiek.projektinzynierka.domain;
 public class Weight {
     private int id;
     private int year;
-    private int _month;
-    private int _day;
-    private double _weight;
+    private int month;
+    private int day;
+    private double weight;
 
 
     public Weight() {
@@ -16,15 +16,15 @@ public class Weight {
     public Weight(int id, int year, int month, int day, double weight){
         this.id = id;
         this.year = year;
-        this._month = month;
-        this._day = day;
-        this._weight = weight;
+        this.month = month;
+        this.day = day;
+        this.weight = weight;
     }
     public Weight(int year, int month, int day, double weight){
         this.year = year;
-        this._month = month;
-        this._day = day;
-        this._weight = weight;
+        this.month = month;
+        this.day = day;
+        this.weight = weight;
     }
 
 
@@ -45,26 +45,26 @@ public class Weight {
     }
 
     public int getMonth() {
-        return this._month;
+        return this.month;
     }
 
     public void setMonth(int month) {
-        this._month = month;
+        this.month = month;
     }
 
     public int getDay() {
-        return this._day;
+        return this.day;
     }
 
     public void setDay(int day) {
-        this._day = day;
+        this.day = day;
     }
 
     public double getWeight() {
-        return this._weight;
+        return this.weight;
     }
 
     public void setWeight(double weight) {
-        this._weight = weight;
+        this.weight = weight;
     }
 }
