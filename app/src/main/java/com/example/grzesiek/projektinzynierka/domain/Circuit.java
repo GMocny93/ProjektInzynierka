@@ -1,19 +1,19 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.domain;
 
 
-public class circuit {
-    int _id;
-    int _year;
-    int _month;
-    int _day;
-    double _chest;
-    double _waist;
+public class Circuit {
+    private int _id;
+    private int _year;
+    private int _month;
+    private int _day;
+    private double _chest;
+    private double _waist;
 
 
-    public circuit() {
+    public Circuit() {
     }
 
-    public circuit(int id, int year, int month, int day, double chest, double waist){
+    public Circuit(int id, int year, int month, int day, double chest, double waist){
         this._id = id;
         this._year = year;
         this._month = month;
@@ -21,7 +21,7 @@ public class circuit {
         this._chest = chest;
         this._waist = waist;
     }
-    public circuit(int year, int month, int day, double chest, double waist){
+    public Circuit(int year, int month, int day, double chest, double waist){
         this._year = year;
         this._month = month;
         this._day = day;

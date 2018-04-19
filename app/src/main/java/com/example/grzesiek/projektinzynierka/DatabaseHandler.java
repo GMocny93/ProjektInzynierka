@@ -6,6 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.grzesiek.projektinzynierka.activities.CirciutListActivity;
+import com.example.grzesiek.projektinzynierka.activities.CircuitActivity;
+import com.example.grzesiek.projektinzynierka.activities.InformationActivity;
+import com.example.grzesiek.projektinzynierka.domain.Circuit;
+import com.example.grzesiek.projektinzynierka.domain.Information;
+import com.example.grzesiek.projektinzynierka.domain.Weight;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +24,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //database name
     private static final String DATABASE_NAME = "databaseApp";
 
-    //information tabele name
+    //Information tabele name
 
 
     private static final String TABLE_INFORMATION = "information";
@@ -118,8 +125,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 // CRUD operation (Create, Read, Update, Delete)
 
-    //adding new information
-    void addInformation(information information) {
+    //adding new Information
+    public void addInformation(Information information) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(INF_NAME, information.getName());
@@ -131,7 +138,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    void addWeight (weight weight) {
+    public void addWeight (Weight weight) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(WG_YEAR, weight.getYear());
@@ -142,7 +149,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    void addCircuit(circuit circuit){
+    public void addCircuit(Circuit circuit){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(OB_YEAR, circuit.getYear());
@@ -158,7 +165,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     //gettign single infomration
-    information getInformation(int id) {
+    public Information getInformation(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_INFORMATION, new String[]{INF_ID, INF_NAME,
                         INF_HEIGHT, INF_WEIGHT, INF_TARGETWEIGHT, INF_AGE},
@@ -166,34 +173,34 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
-        information information = new information(Integer.parseInt(cursor.getString(0)),
+        Information information = new Information(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1), Integer.parseInt(cursor.getString(2)),
                 Double.parseDouble(cursor.getString(3)), Double.parseDouble(cursor.getString(4)),
                 Integer.parseInt(cursor.getString(5)));
         return information;
     }
 
-    weight getWaight(int id){
+    public Weight getWaight(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_WEIGHT, new String[]{WG_ID, WG_YEAR, WG_MONTH, WG_DAY, WG_WEIGHT},
                 WG_ID + "=?", new String[] {String.valueOf(id)},
                 null,null,null,null);
         if (cursor != null)
             cursor.moveToFirst();
-        weight weight = new weight(Integer.parseInt(cursor.getString(0)),Integer.parseInt(cursor.getString(1)),
+        Weight weight = new Weight(Integer.parseInt(cursor.getString(0)),Integer.parseInt(cursor.getString(1)),
                 Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)),
                 Double.parseDouble(cursor.getString(4)));
         return weight;
     }
 
-    circuit getCircuit(int id){
+    public Circuit getCircuit(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_CIRCUIT, new String[]{OB_ID, OB_YEAR, OB_MONTH, OB_DAY, OB_CHEST, OB_WAIST},
                 OB_ID + "=?", new String[]{String.valueOf(id)},
                 null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
-        circuit circuit = new circuit(Integer.parseInt(cursor.getString(0)),Integer.parseInt(cursor.getString(1)),
+        Circuit circuit = new Circuit(Integer.parseInt(cursor.getString(0)),Integer.parseInt(cursor.getString(1)),
                 Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)),
                 Double.parseDouble(cursor.getString(4)), Double.parseDouble(cursor.getString(5)));
         return circuit;
@@ -203,14 +210,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     //getting all infortmacion
-    public List<information> getAllInformation() {
-        List<information> informationList = new ArrayList<information>();
+    public List<Information> getAllInformation() {
+        List<Information> informationList = new ArrayList<Information>();
         String selectQuery = "SELECT * FROM " + TABLE_INFORMATION;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                information information = new information();
+                Information information = new Information();
                 information.setId(Integer.parseInt(cursor.getString(0)));
                 information.setName(cursor.getString(1));
                 information.setHeight(Integer.parseInt(cursor.getString(2)));
@@ -223,14 +230,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return informationList;
     }
 
-    public List<weight> getAllWeight() {
-        List<weight> weightList = new ArrayList<weight>();
+    public List<Weight> getAllWeight() {
+        List<Weight> weightList = new ArrayList<Weight>();
         String selectQuery = "SELECT * FROM " + TABLE_WEIGHT;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery,null);
         if (cursor.moveToFirst()){
             do {
-                weight weight = new weight();
+                Weight weight = new Weight();
                 weight.setId(Integer.parseInt(cursor.getString(0)));
                 weight.setYear(Integer.parseInt(cursor.getString(1)));
                 weight.setMonth(Integer.parseInt(cursor.getString(2)));
@@ -243,14 +250,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    public List<circuit> getAllCircuit(){
-        List<circuit> circuitList = new ArrayList<circuit>();
+    public List<Circuit> getAllCircuit(){
+        List<Circuit> circuitList = new ArrayList<Circuit>();
         String selectQuery = "SELECT * FROM " + TABLE_CIRCUIT;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()){
             do {
-                circuit circuit = new circuit();
+                Circuit circuit = new Circuit();
                 circuit.setId(Integer.parseInt(cursor.getString(0)));
                 circuit.setYear(Integer.parseInt(cursor.getString(1)));
                 circuit.setMonth(Integer.parseInt(cursor.getString(2)));
@@ -265,8 +272,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-    //updating single information
-    public int updateInformation(information information) {
+    //updating single Information
+    public int updateInformation(Information information) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(INF_NAME, information.getName());
@@ -279,7 +286,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[]{String.valueOf(information.getId())});
     }
 
-    public int updateWeight(weight weight){
+    public int updateWeight(Weight weight){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(WG_YEAR, weight.getYear());
@@ -292,7 +299,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    public int updateCircuit(circuit circuit){
+    public int updateCircuit(Circuit circuit){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(OB_YEAR, circuit.getYear());
@@ -305,15 +312,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    //Deleting single information
-    public void deleteInformation(information information) {
+    //Deleting single Information
+    public void deleteInformation(Information information) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_INFORMATION, INF_ID + " = ?",
                 new String[]{String.valueOf(information.getId())});
         db.close();
     }
 
-    public void deleteWeight(weight weight) {
+    public void deleteWeight(Weight weight) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_WEIGHT, WG_ID + " = ?",
                 new String[] {String.valueOf(weight.getId())});
@@ -321,7 +328,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    public void deleteCircuit(circuit circuit) {
+    public void deleteCircuit(Circuit circuit) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_CIRCUIT, OB_ID + "= ?",
                 new String[]{String.valueOf(circuit.getId())});

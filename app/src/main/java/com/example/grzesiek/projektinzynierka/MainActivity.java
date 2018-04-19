@@ -8,6 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.grzesiek.projektinzynierka.activities.AuthorActivity;
+import com.example.grzesiek.projektinzynierka.activities.CircuitActivity;
+import com.example.grzesiek.projektinzynierka.activities.InformationActivity;
+import com.example.grzesiek.projektinzynierka.domain.Information;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,15 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
         //dodanie informacji z palca
 /*
-        db.addInformation(new information("Grzesiek", 184, 120.5, 100.5, 25));
-         db.addWeight(new weight(2018, 3, 8, 119.5));
-        db.addWeight(new weight(2018, 4, 10, 129.5));
-        db.addWeight(new weight(2018, 5, 12, 139.5));
-        db.addWeight(new weight(2018, 6, 15, 149.5));
-        db.addCircuit(new circuit(2018, 4, 10, 116.0, 117.5));
+        db.addInformation(new Information("Grzesiek", 184, 120.5, 100.5, 25));
+         db.addWeight(new Weight(2018, 3, 8, 119.5));
+        db.addWeight(new Weight(2018, 4, 10, 129.5));
+        db.addWeight(new Weight(2018, 5, 12, 139.5));
+        db.addWeight(new Weight(2018, 6, 15, 149.5));
+        db.addCircuit(new Circuit(2018, 4, 10, 116.0, 117.5));
 */
-        List<information> information = db.getAllInformation();
-        for (information inf : information) {
+        List<Information> information = db.getAllInformation();
+        for (Information inf : information) {
             newInformation.setText("Witaj " + inf.getName() + "! \n \n "
                     + "Przy swoim wzroscie równym " + inf.getHeight() + " cm i"
                     + " w wieku " + inf.getAge() + " ważysz " + inf.getWeight()

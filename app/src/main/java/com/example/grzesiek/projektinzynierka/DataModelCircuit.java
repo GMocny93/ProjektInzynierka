@@ -1,11 +1,11 @@
 package com.example.grzesiek.projektinzynierka;
 
 public class DataModelCircuit {
-    int year;
-    int month;
-    int day;
-    double chest;
-    double waist;
+    private int year;
+    private int month;
+    private int day;
+    private double chest;
+    private double waist;
 
 
     public DataModelCircuit(int year, int month, int day, double chest, double waist) {

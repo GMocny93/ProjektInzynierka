@@ -1,10 +1,10 @@
 package com.example.grzesiek.projektinzynierka;
 
 public class DataModelWeight {
-    int year;
-    int month;
-    int day;
-    double weight;
+    private int year;
+    private int month;
+    private int day;
+    private double weight;
 
 
     public DataModelWeight(int year, int month, int day, double weight) {

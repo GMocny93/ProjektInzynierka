@@ -1,21 +1,21 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.domain;
 
 
-public class information {
+public class Information {
 
-    int _id;
-    String _name;
-    int _height;
-    double _weight;
-    double _targetWeight;
-    int _age;
+    private int _id;
+    private String _name;
+    private int _height;
+    private double _weight;
+    private double _targetWeight;
+    private int _age;
 
     //empty constructor
-    public information() {
+    public Information() {
     }
 
-    //all main information
-    public information(int id, String name, int height, double weight, double targetWeight, int age) {
+    //all main Information
+    public Information(int id, String name, int height, double weight, double targetWeight, int age) {
         this._id = id;
         this._name = name;
         this._height = height;
@@ -24,8 +24,8 @@ public class information {
         this._age = age;
     }
 
-    //all main information, no id
-    public information(String name, int height, double weight, double targetWeight, int age) {
+    //all main Information, no id
+    public Information(String name, int height, double weight, double targetWeight, int age) {
         this._name = name;
         this._height = height;
         this._weight = weight;
@@ -61,7 +61,7 @@ public class information {
         this._height = height;
     }
 
-    //weight
+    //Weight
     public double getWeight() {
         return this._weight;
     }

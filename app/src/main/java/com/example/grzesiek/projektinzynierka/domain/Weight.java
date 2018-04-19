@@ -1,27 +1,27 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.domain;
 
 
 
-public class weight {
+public class Weight {
 
-    int _id;
-    int _year;
-    int _month;
-    int _day;
-    double _weight;
+    private int _id;
+    private int _year;
+    private int _month;
+    private int _day;
+    private double _weight;
 
 
-    public weight() {
+    public Weight() {
     }
 
-    public weight(int id, int year, int month, int day, double weight){
+    public Weight(int id, int year, int month, int day, double weight){
         this._id = id;
         this._year = year;
         this._month = month;
         this._day = day;
         this._weight = weight;
     }
-    public weight(int year, int month, int day, double weight){
+    public Weight(int year, int month, int day, double weight){
         this._year = year;
         this._month = month;
         this._day = day;

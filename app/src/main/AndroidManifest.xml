@@ -16,10 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CircuitActivity" />
+        <activity android:name=".activities.CircuitActivity" />
         <activity android:name=".WeightActivity" />
-        <activity android:name=".InformationActivity" />
-        <activity android:name=".AuthorActivity" />
+        <activity android:name=".activities.InformationActivity" />
+        <activity android:name=".activities.AuthorActivity" />
+        <activity android:name=".WeightListActivity"/>
+        <activity android:name=".activities.CirciutListActivity"/>
     </application>
 
 </manifest>

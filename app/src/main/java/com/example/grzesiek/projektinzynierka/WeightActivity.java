@@ -11,11 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.grzesiek.projektinzynierka.activities.AuthorActivity;
+import com.example.grzesiek.projektinzynierka.activities.CircuitActivity;
+import com.example.grzesiek.projektinzynierka.activities.InformationActivity;
+import com.example.grzesiek.projektinzynierka.domain.Weight;
+
 public class WeightActivity extends AppCompatActivity  {
-    Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
-    EditText dayEditText, monthEditText, yearEditText, weightEditText;
-    int day, month, year;
-    double weight;
+    private Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
+    private EditText dayEditText, monthEditText, yearEditText, weightEditText;
+    private int day, month, year;
+    private double weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +59,7 @@ public class WeightActivity extends AppCompatActivity  {
                     year = Integer.parseInt(yearEditText.getText().toString());
                     weight = Double.parseDouble(weightEditText.getText().toString());
 
-                    db.addWeight(new weight(year, month, day, weight));
+                    db.addWeight(new Weight(year, month, day, weight));
                     Toast toast = Toast.makeText(WeightActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                     toast.show();
                 }catch (Exception e) {
@@ -72,7 +77,7 @@ public class WeightActivity extends AppCompatActivity  {
                     day = Integer.parseInt(dayEditText.getText().toString());
                     month = Integer.parseInt(monthEditText.getText().toString());
                     year = Integer.parseInt(yearEditText.getText().toString());
-                    weight = Double.parseDouble(weightEditText.getText().toString());
+                    Weight = Double.parseDouble(weightEditText.getText().toString());
 
                     //usuwanie z bazy danych
 

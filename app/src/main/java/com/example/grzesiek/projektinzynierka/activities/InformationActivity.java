@@ -1,4 +1,4 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,12 +11,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.grzesiek.projektinzynierka.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.InputFilterMinMax;
+import com.example.grzesiek.projektinzynierka.MainActivity;
+import com.example.grzesiek.projektinzynierka.R;
+import com.example.grzesiek.projektinzynierka.WeightActivity;
+import com.example.grzesiek.projektinzynierka.domain.Information;
+
 public class InformationActivity extends AppCompatActivity {
-    Button buttonSaveData;
-    EditText nameEditText, heightEditText, weightEditText, targetWeightEditText, ageEditText;
-    String name;
-    int height, age;
-    double weight, targetWeight;
+    private Button buttonSaveData;
+    private EditText nameEditText, heightEditText, weightEditText, targetWeightEditText, ageEditText;
+    private String name;
+    private int height, age;
+    private double weight, targetWeight;
 
 
     @Override
@@ -46,7 +53,7 @@ public class InformationActivity extends AppCompatActivity {
                 targetWeight = Double.parseDouble(targetWeightEditText.getText().toString());
                 age = Integer.parseInt(ageEditText.getText().toString());
 
-                db.addInformation(new information(name, height, weight, targetWeight, age));
+                db.addInformation(new Information(name, height, weight, targetWeight, age));
 
                 Toast toast = Toast.makeText(InformationActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                 toast.show();
