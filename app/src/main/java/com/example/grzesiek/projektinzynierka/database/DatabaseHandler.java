@@ -148,8 +148,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-
-
     //getting single information
     public Information getInformation(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -193,8 +191,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-
-
     //getting all information
     public List<Information> getAllInformation() {
         List<Information> informationList = new ArrayList<Information>();
@@ -235,7 +231,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return weightList;
     }
 
-
     public List<Circuit> getAllCircuit(){
         List<Circuit> circuitList = new ArrayList<Circuit>();
         String selectQuery = "SELECT * FROM " + TABLE_CIRCUIT;
@@ -255,7 +250,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         return circuitList;
     }
-
 
 
     //updating single Information
