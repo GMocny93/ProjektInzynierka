@@ -11,11 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.grzesiek.projektinzynierka.DatabaseHandler;
-import com.example.grzesiek.projektinzynierka.InputFilterMinMax;
-import com.example.grzesiek.projektinzynierka.MainActivity;
+import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.utils.InputFilterMinMax;
 import com.example.grzesiek.projektinzynierka.R;
-import com.example.grzesiek.projektinzynierka.WeightActivity;
 import com.example.grzesiek.projektinzynierka.domain.Circuit;
 
 public class CircuitActivity extends AppCompatActivity {
@@ -98,7 +96,6 @@ public class CircuitActivity extends AppCompatActivity {
 */
     }
 
-    // MENU
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
@@ -146,5 +143,4 @@ public class CircuitActivity extends AppCompatActivity {
     public void loadAuthor() {
         startActivity(new Intent(CircuitActivity.this, AuthorActivity.class));
     }
-
 }

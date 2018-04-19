@@ -1,4 +1,4 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.grzesiek.projektinzynierka.activities.AuthorActivity;
-import com.example.grzesiek.projektinzynierka.activities.CircuitActivity;
-import com.example.grzesiek.projektinzynierka.activities.InformationActivity;
+import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.utils.InputFilterMinMax;
+import com.example.grzesiek.projektinzynierka.R;
 import com.example.grzesiek.projektinzynierka.domain.Weight;
 
 public class WeightActivity extends AppCompatActivity  {
@@ -32,14 +32,12 @@ public class WeightActivity extends AppCompatActivity  {
         buttonWeightList = (Button) findViewById(R.id.buttonCircuitList);
         buttonSaveWeight = (Button) findViewById(R.id.buttonSaveCircuit);
 
-
         dayEditText = (EditText) findViewById(R.id.dayEditText);
         dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
         monthEditText = (EditText) findViewById(R.id.monthEditText);
         monthEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","12")});
         yearEditText = (EditText) findViewById(R.id.yearEditText);
         weightEditText = (EditText) findViewById(R.id.weightEditText);
-
 
         buttonWeightList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,14 +90,9 @@ public class WeightActivity extends AppCompatActivity  {
             }
         });
 */
-
-
     }
 
 
-
-
-    // MENU
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
@@ -148,6 +141,5 @@ public class WeightActivity extends AppCompatActivity  {
     public void loadAuthor() {
         startActivity(new Intent(WeightActivity.this, AuthorActivity.class));
     }
-
 }
 

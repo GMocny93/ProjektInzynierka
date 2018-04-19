@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.grzesiek.projektinzynierka.MainActivity;
 import com.example.grzesiek.projektinzynierka.R;
-import com.example.grzesiek.projektinzynierka.WeightActivity;
 
 public class AuthorActivity extends AppCompatActivity {
 
@@ -18,7 +16,6 @@ public class AuthorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_author);
     }
 
-    // MENU
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;

@@ -1,10 +1,12 @@
-package com.example.grzesiek.projektinzynierka;
+package com.example.grzesiek.projektinzynierka.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
+import com.example.grzesiek.projektinzynierka.R;
 import com.example.grzesiek.projektinzynierka.domain.Circuit;
 import com.example.grzesiek.projektinzynierka.domain.Information;
 import com.example.grzesiek.projektinzynierka.domain.Weight;
@@ -13,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WeightListActivity extends AppCompatActivity {
-
     private ListView list;
 
     @Override

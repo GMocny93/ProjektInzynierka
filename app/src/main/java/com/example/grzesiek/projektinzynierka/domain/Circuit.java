@@ -2,85 +2,79 @@ package com.example.grzesiek.projektinzynierka.domain;
 
 
 public class Circuit {
-    private int _id;
-    private int _year;
-    private int _month;
-    private int _day;
-    private double _chest;
-    private double _waist;
+    private int id;
+    private int year;
+    private int month;
+    private int day;
+    private double chest;
+    private double waist;
 
 
     public Circuit() {
     }
 
     public Circuit(int id, int year, int month, int day, double chest, double waist){
-        this._id = id;
-        this._year = year;
-        this._month = month;
-        this._day = day;
-        this._chest = chest;
-        this._waist = waist;
+        this.id = id;
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.chest = chest;
+        this.waist = waist;
     }
     public Circuit(int year, int month, int day, double chest, double waist){
-        this._year = year;
-        this._month = month;
-        this._day = day;
-        this._chest = chest;
-        this._waist = waist;
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.chest = chest;
+        this.waist = waist;
     }
 
-    //GETTERS SETTERS
 
     public int getId() {
-        return this._id;
-    }
-    public void setId(int id) {
-        this._id = id;
+        return this.id;
     }
 
-    //year
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getYear() {
-        return this._year;
+        return this.year;
     }
 
     public void setYear(int year) {
-        this._year = year;
+        this.year = year;
     }
 
-    //month
     public int getMonth() {
-        return this._month;
+        return this.month;
     }
 
     public void setMonth(int month) {
-        this._month = month;
+        this.month = month;
     }
 
-    //day
     public int getDay() {
-        return this._day;
+        return this.day;
     }
 
     public void setDay(int day) {
-        this._day = day;
+        this.day = day;
     }
 
-    //WGweight
     public double getChest() {
-        return this._chest;
+        return this.chest;
     }
 
     public void setChest(double chest) {
-        this._chest = chest;
+        this.chest = chest;
     }
 
     public double getWaist() {
-        return this._waist;
+        return this.waist;
     }
 
     public void setWaist(double waist) {
-        this._waist = waist;
+        this.waist = waist;
     }
-
-
 }

@@ -4,17 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.example.grzesiek.projektinzynierka.CustomAdapterCircuit;
-import com.example.grzesiek.projektinzynierka.DataModelCircuit;
 import com.example.grzesiek.projektinzynierka.R;
 
-import java.util.ArrayList;
-
 public class CirciutListActivity extends AppCompatActivity {
-
-    ArrayList<DataModelCircuit> dataModelCircuits;
-    ListView listViewl;
-    private static CustomAdapterCircuit CirciutAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
