@@ -17,7 +17,7 @@
 
 
     <TextView
-        android:id="@+id/id"
+        android:id="@+id/idCircuit"
         android:layout_width="19dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -40,7 +40,7 @@
 
 
     <TextView
-        android:id="@+id/year"
+        android:id="@+id/yearCircuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -56,14 +56,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/year"
+        android:layout_toEndOf="@+id/dayCircuit"
         android:text="."
         android:textColor="@android:color/black"
         android:textStyle="bold" />
 
 
     <TextView
-        android:id="@+id/month"
+        android:id="@+id/monthCircuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -73,19 +73,19 @@
         android:textColor="@android:color/black"
         android:textStyle="bold" />
 
+
     <TextView
         android:id="@+id/day_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/month"
+        android:layout_toEndOf="@+id/yearCircuit"
         android:text="."
         android:textColor="@android:color/black"
         android:textStyle="bold" />
 
-
     <TextView
-        android:id="@+id/day"
+        android:id="@+id/dayCircuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -107,7 +107,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/chest"
+        android:id="@+id/chestCircuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -129,11 +129,11 @@
 
 
     <TextView
-        android:id="@+id/waist"
+        android:id="@+id/waistCircuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/month_heading"
+        android:layout_toEndOf="@+id/waist_heading"
         android:text="110.5"
         android:textAppearance="?android:attr/textAppearanceButton"
         android:textColor="@android:color/black"
