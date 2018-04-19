@@ -15,6 +15,7 @@ import com.example.grzesiek.projektinzynierka.activities.WeightListActivity;
 import com.example.grzesiek.projektinzynierka.domain.Circuit;
 import com.example.grzesiek.projektinzynierka.domain.Information;
 import com.example.grzesiek.projektinzynierka.domain.Weight;
+import com.example.grzesiek.projektinzynierka.utils.Constansts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,14 +32,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String INF_WEIGHT = "weight";
     private static final String INF_TARGETWEIGHT = "targetWeight";
     private static final String INF_AGE = "age";
-
-    private static final String TABLE_WEIGHT = "weight";
-
-    private static final String WG_ID = "id";
-    private static final String WG_YEAR = "year";
-    private static final String WG_MONTH = "month";
-    private static final String WG_DAY = "day";
-    private static final String WG_WEIGHT = "weight";
 
     private static final String TABLE_CIRCUIT = "circuit";
 
@@ -84,9 +77,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + INF_HEIGHT + " INT," + INF_WEIGHT + " REAL,"
                 + INF_TARGETWEIGHT + " REAL," + INF_AGE + " INT" + ")";
 
-        String CREATE_WEIGHT_TABLE = "CREATE TABLE " + TABLE_WEIGHT + "("
-                + WG_ID + " INTEGER PRIMARY KEY," + WG_YEAR + " INT," + WG_MONTH + " INT," + WG_DAY + " INT,"
-                + WG_WEIGHT + " REAL" + ")";
+        String CREATE_WEIGHT_TABLE = "CREATE TABLE " + Constansts.TABLE_WEIGHT + "("
+                + Constansts.WG_ID + " INTEGER PRIMARY KEY," + Constansts.WG_YEAR + " INT," + Constansts.WG_MONTH + " INT," + Constansts.WG_DAY + " INT,"
+                + Constansts.WG_WEIGHT + " REAL" + ")";
 
         String CREATE_OB_TABLE = "CREATE TABLE " + TABLE_CIRCUIT + "("
                 + OB_ID + " INTEGER PRIMARY KEY," + OB_YEAR + " INT," + OB_MONTH + " INT," + OB_DAY + " INT,"
@@ -103,7 +96,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_INFORMATION);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEIGHT);
+        db.execSQL("DROP TABLE IF EXISTS " + Constansts.TABLE_WEIGHT);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CIRCUIT);
 
         onCreate(db);
@@ -121,17 +114,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(INF_TARGETWEIGHT, information.getTargetWeight());
         values.put(INF_AGE, information.getAge());
         db.insert(TABLE_INFORMATION, null, values);
-        db.close();
-    }
-
-    public void addWeight (Weight weight) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(WG_YEAR, weight.getYear());
-        values.put(WG_MONTH, weight.getMonth());
-        values.put(WG_DAY, weight.getDay());
-        values.put(WG_WEIGHT, weight.getWeight());
-        db.insert(TABLE_WEIGHT, null, values);
         db.close();
     }
 
@@ -164,18 +146,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return information;
     }
 
-    public Weight getWeight(int id){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_WEIGHT, new String[]{WG_ID, WG_YEAR, WG_MONTH, WG_DAY, WG_WEIGHT},
-                WG_ID + "=?", new String[] {String.valueOf(id)},
-                null,null,null,null);
-        if (cursor != null)
-            cursor.moveToFirst();
-        Weight weight = new Weight(Integer.parseInt(cursor.getString(0)),Integer.parseInt(cursor.getString(1)),
-                Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)),
-                Double.parseDouble(cursor.getString(4)));
-        return weight;
-    }
 
     public Circuit getCircuit(int id){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -212,24 +182,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return informationList;
     }
 
-    public List<Weight> getAllWeight() {
-        List<Weight> weightList = new ArrayList<Weight>();
-        String selectQuery = "SELECT * FROM " + TABLE_WEIGHT;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery,null);
-        if (cursor.moveToFirst()){
-            do {
-                Weight weight = new Weight();
-                weight.setId(Integer.parseInt(cursor.getString(0)));
-                weight.setYear(Integer.parseInt(cursor.getString(1)));
-                weight.setMonth(Integer.parseInt(cursor.getString(2)));
-                weight.setDay(Integer.parseInt(cursor.getString(3)));
-                weight.setWeight(Double.parseDouble(cursor.getString(4)));
-                weightList.add(weight);
-            } while (cursor.moveToNext());
-        }
-        return weightList;
-    }
 
     public List<Circuit> getAllCircuit(){
         List<Circuit> circuitList = new ArrayList<Circuit>();
@@ -266,18 +218,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[]{String.valueOf(information.getId())});
     }
 
-    public int updateWeight(Weight weight){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(WG_YEAR, weight.getYear());
-        values.put(WG_MONTH, weight.getMonth());
-        values.put(WG_DAY, weight.getDay());
-        values.put(WG_WEIGHT, weight.getWeight());
-
-        return db.update(TABLE_WEIGHT, values, WG_ID + " = ?",
-                new String[]{String.valueOf(weight.getId())});
-    }
-
 
     public int updateCircuit(Circuit circuit){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -299,14 +239,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[]{String.valueOf(information.getId())});
         db.close();
     }
-
-    public void deleteWeight(Weight weight) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_WEIGHT, WG_ID + " = ?",
-                new String[] {String.valueOf(weight.getId())});
-        db.close();
-    }
-
 
     public void deleteCircuit(Circuit circuit) {
         SQLiteDatabase db = this.getWritableDatabase();
