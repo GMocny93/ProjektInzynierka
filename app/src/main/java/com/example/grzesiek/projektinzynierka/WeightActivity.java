@@ -39,7 +39,7 @@ public class WeightActivity extends AppCompatActivity  {
         buttonWeightList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WeightActivity.this, activity_weightList.class));
+                startActivity(new Intent(WeightActivity.this, WeightListActivity.class));
 
                 //dodać wykres z pomiarów i pod nim listView z pomiarami
             }

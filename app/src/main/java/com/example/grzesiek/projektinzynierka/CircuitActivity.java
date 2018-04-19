@@ -39,7 +39,7 @@ public class CircuitActivity extends AppCompatActivity {
         buttonCircuitList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CircuitActivity.this, activity_circuitList.class));
+                startActivity(new Intent(CircuitActivity.this, CirciutListActivity.class));
 
                 //dodać wykres z pomiarów i pod nim listView z pomiarami
             }

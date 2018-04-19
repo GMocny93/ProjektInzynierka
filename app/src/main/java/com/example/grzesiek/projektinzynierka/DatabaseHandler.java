@@ -69,11 +69,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public DatabaseHandler(activity_weightList context) {
+
+    public DatabaseHandler(CirciutListActivity context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public DatabaseHandler(activity_circuitList context) {
+    public DatabaseHandler(WeightListActivity context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
