@@ -46,7 +46,7 @@ public class CircuitActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(CircuitActivity.this, CirciutListActivity.class));
 
-                //dodać wykres z pomiarów i pod nim listView z pomiarami
+
             }
         });
 

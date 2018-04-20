@@ -44,7 +44,7 @@ public class WeightActivity extends AppCompatActivity  {
             public void onClick(View view) {
                 startActivity(new Intent(WeightActivity.this, WeightListActivity.class));
 
-                //dodać wykres z pomiarów i pod nim listView z pomiarami
+
             }
         });
 
