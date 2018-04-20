@@ -24,19 +24,19 @@ public class WeightListActivity extends AppCompatActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         list = findViewById(R.id.weight_list);
 
- //       prepareData(db);
+        prepareData(db);
         List<String> dane = new ArrayList<>();
 
         List<Weight> weights = db.getAllWeight();
 
         for (Weight wg : weights) {
-            String record = "numer pomiaru: " +  wg.getId() + "\n" + " data pomiaru: " + wg.getYear() + "." + wg.getMonth() + "." + wg.getDay() + "\n" + "waga: " + wg.getWeight() + "kg";
+            String record = "data pomiaru: " + wg.getYear() + "." + wg.getMonth() + "." + wg.getDay() + "\n" + "waga: " + wg.getWeight() + "kg";
             dane.add(record);
         }
 
         list.setAdapter(new ArrayAdapter<>(this, R.layout.list_item, R.id.row, dane));
     }
-/*
+
     private void prepareData(DatabaseHandler db) {
         db.addInformation(new Information("Grzesiek", 184, 120.5, 100.5, 25));
         db.addWeight(new Weight(2018, 3, 8, 119.5));
@@ -46,6 +46,7 @@ public class WeightListActivity extends AppCompatActivity {
         db.addCircuit(new Circuit(2018, 4, 10, 116.0, 117.5));
         db.addCircuit(new Circuit(2018, 5, 8, 110.0, 115.6));
         db.addCircuit(new Circuit(2018, 6, 12, 112.0, 114.7));
+        db.addCircuit(new Circuit(2018, 10, 1, 122.0, 124.7));
     }
-*/
+
 }

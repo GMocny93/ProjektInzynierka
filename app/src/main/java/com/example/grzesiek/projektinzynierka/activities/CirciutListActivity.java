@@ -23,7 +23,7 @@ public class CirciutListActivity extends AppCompatActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         list = findViewById(R.id.circuit_list);
 
-        //       prepareData(db);
+
         List<String> dane = new ArrayList<>();
 
         List<Circuit> circuits = db.getAllCircuit();
