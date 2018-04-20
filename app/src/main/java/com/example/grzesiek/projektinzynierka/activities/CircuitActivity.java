@@ -29,8 +29,9 @@ public class CircuitActivity extends AppCompatActivity {
 
         final DatabaseHandler db = new DatabaseHandler(this);
 
-        buttonCircuitList = (Button) findViewById(R.id.buttonCircuitList);
-        buttonSaveCircuit = (Button) findViewById(R.id.buttonSaveCircuit);
+        buttonCircuitList = (Button) findViewById(R.id.buttonWeightList);
+        buttonSaveCircuit = (Button) findViewById(R.id.buttonSaveWeight);
+        buttonDeleteCircuit = (Button) findViewById(R.id.buttonDeleteCircuit);
 
         dayEditText = (EditText) findViewById(R.id.dayEditText);
         dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
@@ -72,18 +73,17 @@ public class CircuitActivity extends AppCompatActivity {
             }
         });
 
-/*
+
         buttonDeleteCircuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
+               try {
                     day = Integer.parseInt(dayEditText.getText().toString());
                     month = Integer.parseInt(monthEditText.getText().toString());
                     year = Integer.parseInt(yearEditText.getText().toString());
                     chest = Double.parseDouble(chestEditText.getText().toString());
                     waist = Double.parseDouble(waistEditText.getText().toString());
-
-                    //usuwanie z bazy danych
+                    db.deleteCircuit(new Circuit(year, month, day, chest, waist));
 
                     Toast toast = Toast.makeText(CircuitActivity.this, "Operacja usuwania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                     toast.show();
@@ -93,7 +93,7 @@ public class CircuitActivity extends AppCompatActivity {
                 }
             }
         });
-*/
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

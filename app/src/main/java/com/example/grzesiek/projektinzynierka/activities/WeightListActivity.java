@@ -30,7 +30,7 @@ public class WeightListActivity extends AppCompatActivity {
         List<Weight> weights = db.getAllWeight();
 
         for (Weight wg : weights) {
-            String record = "data pomiaru: " + wg.getYear() + "." + wg.getMonth() + "." + wg.getDay() + "\n" + "waga: " + wg.getWeight() + "kg";
+            String record = "numer pomiaru: " +  wg.getId() + "\n" + " data pomiaru: " + wg.getYear() + "." + wg.getMonth() + "." + wg.getDay() + "\n" + "waga: " + wg.getWeight() + "kg";
             dane.add(record);
         }
 

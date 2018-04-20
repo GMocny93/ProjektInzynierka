@@ -314,4 +314,5 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[]{String.valueOf(circuit.getId())});
         db.close();
     }
+
 }

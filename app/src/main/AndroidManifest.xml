@@ -20,9 +20,8 @@
         <activity android:name=".activities.WeightActivity" />
         <activity android:name=".activities.InformationActivity" />
         <activity android:name=".activities.AuthorActivity" />
-        <activity android:name=".activities.WeightListActivity"/>
-        <activity android:name=".activities.CirciutListActivity"/>
+        <activity android:name=".activities.WeightListActivity" />
+        <activity android:name=".activities.CirciutListActivity" />
     </application>
 
 </manifest>
-

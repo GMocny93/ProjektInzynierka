@@ -13,6 +13,10 @@ public class Weight {
     public Weight() {
     }
 
+    public Weight(int id) {
+        this.id = id;
+    }
+
     public Weight(int id, int year, int month, int day, double weight){
         this.id = id;
         this.year = year;
