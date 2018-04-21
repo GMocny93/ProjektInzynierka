@@ -38,6 +38,6 @@
 
     <string name="saveData">Zapisz Dane</string>
     <string name="saveButton">Zapisz pomiar</string>
-    <string name="deleteButton">Usuń pomiar</string>
+    <string name="deleteButton">Usuń pomiar o id:</string>
 
 </resources>

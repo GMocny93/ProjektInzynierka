@@ -29,7 +29,7 @@ public class CirciutListActivity extends AppCompatActivity {
         List<Circuit> circuits = db.getAllCircuit();
 
         for (Circuit ct : circuits) {
-            String record = "data pomiaru: " + ct.getYear() + "." + ct.getMonth() + "." + ct.getDay() +
+            String record = "Nr pomiaru: " + ct.getId() + "    data pomiaru: " + ct.getYear() + "." + ct.getMonth() + "." + ct.getDay() +
                     "\n" + "obw. klatki: " + ct.getChest() + "cm" + "    obw. pasa: " + ct.getWaist() + "cm";
             dane.add(record);
         }

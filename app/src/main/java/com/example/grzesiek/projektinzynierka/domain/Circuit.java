@@ -13,6 +13,10 @@ public class Circuit {
     public Circuit() {
     }
 
+    public Circuit (int id){
+        this.id = id;
+    }
+
     public Circuit(int id, int year, int month, int day, double chest, double waist){
         this.id = id;
         this.year = year;

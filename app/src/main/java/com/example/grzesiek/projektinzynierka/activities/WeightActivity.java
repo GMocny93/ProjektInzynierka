@@ -18,7 +18,7 @@ import com.example.grzesiek.projektinzynierka.domain.Weight;
 
 public class WeightActivity extends AppCompatActivity  {
     private Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
-    private EditText dayEditText, monthEditText, yearEditText, weightEditText;
+    private EditText dayEditText, monthEditText, yearEditText, weightEditText, idEditText;
     private int day, month, year,id;
     private double weight;
 
@@ -39,6 +39,7 @@ public class WeightActivity extends AppCompatActivity  {
         monthEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","12")});
         yearEditText = (EditText) findViewById(R.id.yearEditText);
         weightEditText = (EditText) findViewById(R.id.weightEditText);
+        idEditText = (EditText) findViewById(R.id.idEditText);
 
         buttonWeightList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,16 +54,13 @@ public class WeightActivity extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 try {
-                    day = Integer.parseInt(dayEditText.getText().toString());
-                    month = Integer.parseInt(monthEditText.getText().toString());
-                    year = Integer.parseInt(yearEditText.getText().toString());
-                    weight = Double.parseDouble(weightEditText.getText().toString());
-                    db.deleteWeight(new Weight(year, month, day, weight));
+                    id = Integer.parseInt(idEditText.getText().toString());
+                    db.deleteWeight(new Weight(id));
 
-                    Toast toast = Toast.makeText(WeightActivity.this, "Operacja usuwania przebiegła pomyślnie", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(WeightActivity.this, "Został usunięty wpis o podanym numerze", Toast.LENGTH_SHORT);
                     toast.show();
                 }catch (Exception e) {
-                    Toast toast = Toast.makeText(WeightActivity.this, "Nastąpił bład przy usuwaniu danych", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(WeightActivity.this, "Podaj numer pomiaru", Toast.LENGTH_SHORT);
                     toast.show();
                 }
 

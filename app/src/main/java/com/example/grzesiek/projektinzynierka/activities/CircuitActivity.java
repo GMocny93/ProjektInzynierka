@@ -18,8 +18,8 @@ import com.example.grzesiek.projektinzynierka.domain.Circuit;
 
 public class CircuitActivity extends AppCompatActivity {
     private Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit;
-    private EditText dayEditText, monthEditText, yearEditText, chestEditText, waistEditText;
-    private int day, month, year;
+    private EditText dayEditText, monthEditText, yearEditText, chestEditText, waistEditText, idEditText;
+    private int day, month, year, id;
     private double chest, waist;
 
     @Override
@@ -40,6 +40,7 @@ public class CircuitActivity extends AppCompatActivity {
         yearEditText = (EditText) findViewById(R.id.yearEditText);
         chestEditText = (EditText) findViewById(R.id.chestEditText);
         waistEditText = (EditText) findViewById(R.id.waistEditText);
+        idEditText = (EditText) findViewById(R.id.idEditText);
 
 
         buttonCircuitList.setOnClickListener(new View.OnClickListener() {
@@ -77,18 +78,14 @@ public class CircuitActivity extends AppCompatActivity {
         buttonDeleteCircuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               try {
-                    day = Integer.parseInt(dayEditText.getText().toString());
-                    month = Integer.parseInt(monthEditText.getText().toString());
-                    year = Integer.parseInt(yearEditText.getText().toString());
-                    chest = Double.parseDouble(chestEditText.getText().toString());
-                    waist = Double.parseDouble(waistEditText.getText().toString());
-                    db.deleteCircuit(new Circuit(year, month, day, chest, waist));
+                try {
+                    id = Integer.parseInt(idEditText.getText().toString());
+                    db.deleteCircuit(new Circuit(id));
 
-                    Toast toast = Toast.makeText(CircuitActivity.this, "Operacja usuwania przebiegła pomyślnie", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(CircuitActivity.this, "Został usunięty wpis o podanym numerze", Toast.LENGTH_SHORT);
                     toast.show();
                 }catch (Exception e) {
-                    Toast toast = Toast.makeText(CircuitActivity.this, "Nastąpił bład przy usuwaniu danych", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(CircuitActivity.this, "Podaj numer pomiaru", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }

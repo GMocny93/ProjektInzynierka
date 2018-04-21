@@ -24,13 +24,13 @@ public class WeightListActivity extends AppCompatActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         list = findViewById(R.id.weight_list);
 
-        prepareData(db);
+     //   prepareData(db);
         List<String> dane = new ArrayList<>();
 
         List<Weight> weights = db.getAllWeight();
 
         for (Weight wg : weights) {
-            String record = "data pomiaru: " + wg.getYear() + "." + wg.getMonth() + "." + wg.getDay() + "\n" + "waga: " + wg.getWeight() + "kg";
+            String record = "Nr pomiaru: " + wg.getId() + "     data pomiaru: " + wg.getYear() + "." + wg.getMonth() + "." + wg.getDay() + "\n" + "waga: " + wg.getWeight() + "kg";
             dane.add(record);
         }
 
