@@ -68,7 +68,7 @@ public class WeightActivity extends AppCompatActivity  {
                     Toast toast = Toast.makeText(WeightActivity.this, "Został usunięty wpis o podanym numerze", Toast.LENGTH_SHORT);
                     toast.show();
                 }catch (Exception e) {
-                    Toast toast = Toast.makeText(WeightActivity.this, "Podaj numer pomiaru", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(WeightActivity.this, "Podaj numer pomiaru do usunięcia", Toast.LENGTH_SHORT);
                     toast.show();
                 }
 
@@ -88,7 +88,7 @@ public class WeightActivity extends AppCompatActivity  {
                     Toast toast = Toast.makeText(WeightActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT);
                     toast.show();
                 }catch (Exception e) {
-                    Toast toast = Toast.makeText(WeightActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(WeightActivity.this, "Nastąpił błąd przy dodawaniu danych", Toast.LENGTH_SHORT);
                     toast.show();
                 }
 

@@ -55,7 +55,7 @@ public class InformationActivity extends AppCompatActivity {
 
                 Toast.makeText(InformationActivity.this, "Operacja dodawania przebiegła pomyślnie", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(InformationActivity.this, "Nastąpił bład przy dodawaniu danych", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InformationActivity.this, "Nastąpił błąd przy dodawaniu danych", Toast.LENGTH_SHORT).show();
                 }
         }
     });
