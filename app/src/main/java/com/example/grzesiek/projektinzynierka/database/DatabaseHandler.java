@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.grzesiek.projektinzynierka.CircuitChart;
+import com.example.grzesiek.projektinzynierka.CircuitChart2;
+import com.example.grzesiek.projektinzynierka.WeightChart;
 import com.example.grzesiek.projektinzynierka.activities.CirciutListActivity;
 import com.example.grzesiek.projektinzynierka.activities.CircuitActivity;
 import com.example.grzesiek.projektinzynierka.activities.InformationActivity;
@@ -76,6 +79,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    public DatabaseHandler(WeightChart context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public DatabaseHandler(CircuitChart context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public DatabaseHandler(CircuitChart2 context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
