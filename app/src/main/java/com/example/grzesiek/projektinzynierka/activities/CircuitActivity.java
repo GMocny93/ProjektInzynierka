@@ -11,13 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.grzesiek.projektinzynierka.CircuitChart;
+import com.example.grzesiek.projektinzynierka.CircuitChart2;
+import com.example.grzesiek.projektinzynierka.WeightChart;
 import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
 import com.example.grzesiek.projektinzynierka.utils.InputFilterMinMax;
 import com.example.grzesiek.projektinzynierka.R;
 import com.example.grzesiek.projektinzynierka.domain.Circuit;
 
 public class CircuitActivity extends AppCompatActivity {
-    private Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit;
+    private Button buttonCircuitList, buttonSaveCircuit, buttonDeleteCircuit, buttonChart, buttonChart2;
     private EditText dayEditText, monthEditText, yearEditText, chestEditText, waistEditText, idEditText;
     private int day, month, year, id;
     private double chest, waist;
@@ -32,6 +35,8 @@ public class CircuitActivity extends AppCompatActivity {
         buttonCircuitList = (Button) findViewById(R.id.buttonWeightList);
         buttonSaveCircuit = (Button) findViewById(R.id.buttonSaveWeight);
         buttonDeleteCircuit = (Button) findViewById(R.id.buttonDeleteCircuit);
+        buttonChart = (Button) findViewById(R.id.buttonChart);
+        buttonChart2 = (Button) findViewById(R.id.buttonChart2);
 
         dayEditText = (EditText) findViewById(R.id.dayEditText);
         dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
@@ -48,7 +53,20 @@ public class CircuitActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(CircuitActivity.this, CirciutListActivity.class));
 
+            }
+        });
 
+        buttonChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CircuitActivity.this, CircuitChart.class));
+            }
+        });
+
+        buttonChart2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CircuitActivity.this, CircuitChart2.class));
             }
         });
 

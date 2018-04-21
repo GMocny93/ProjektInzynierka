@@ -3,11 +3,11 @@
 
     <string name="main">Start</string>
     <string name="weight">Waga</string>
-    <string name="circuit">Pomiary obwodow</string>
+    <string name="circuit">Pomiary obwodów</string>
     <string name="information">Informacje</string>
     <string name="author">O autorze</string>
 
-    <string name="abouthAuthor">Autor aplikacji: \n  G M \n \n \n Kontakt: \n mail@mail.com \n \n \n \n Aplikacja została stworzona jako praca inżynierska.</string>
+    <string name="abouthAuthor">Autor aplikacji: \n  Grzegorz Mocny \n \n Kontakt: \n grzegorz.mocny93@gmail.com \n \n \n Aplikacja została stworzona jako praca inżynierska.</string>
 
     <string name="title_activity_pomiary">pomiary</string>
 
@@ -21,7 +21,7 @@
 
     <string name="witajTxt">Witaj</string>
     <string name="wagaTxt">Twoja aktualna waga to:  </string>
-    <string name="RememberTxT">Pamiętaj! Jeśli coś się zmieniło, zaktualizuj pomiary w zakładce Informacje!</string>
+    <string name="RememberTxT">Pamiętaj! Jeśli coś się zmieniło zaktualizuj pomiary!</string>
     <string name="weightInfo">Opcje dotyczące wagi:</string>
     <string name="weightCircuit">Przejście do ostatnich pomiarów wagi </string>
     <string name="circuitCircuit">Przejście do ostatnich pomiarów obwodów </string>
@@ -36,8 +36,13 @@
     <string name="chest">Klatka</string>
     <string name="waist">Pas</string>
 
-    <string name="saveData">Zapisz Dane</string>
+    <string name="saveData">Zapisz dane</string>
     <string name="saveButton">Zapisz pomiar</string>
-    <string name="deleteButton">Usuń pomiar o id:</string>
+    <string name="deleteButton">Usuń pomiar o nr:</string>
+
+    <string name="chartWeight">Wykres wagi</string>
+
+    <string name="chartChest">Wykres obw. klatki</string>
+    <string name="chartWaist">Wykres obw. pasa</string>
 
 </resources>

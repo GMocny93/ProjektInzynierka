@@ -11,13 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.grzesiek.projektinzynierka.WeightChart;
 import com.example.grzesiek.projektinzynierka.database.DatabaseHandler;
 import com.example.grzesiek.projektinzynierka.utils.InputFilterMinMax;
 import com.example.grzesiek.projektinzynierka.R;
 import com.example.grzesiek.projektinzynierka.domain.Weight;
 
 public class WeightActivity extends AppCompatActivity  {
-    private Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight;
+    private Button buttonWeightList, buttonSaveWeight, buttonDeleteWeight, buttonChart;
     private EditText dayEditText, monthEditText, yearEditText, weightEditText, idEditText;
     private int day, month, year,id;
     private double weight;
@@ -32,6 +33,7 @@ public class WeightActivity extends AppCompatActivity  {
         buttonWeightList = (Button) findViewById(R.id.buttonWeightList);
         buttonSaveWeight = (Button) findViewById(R.id.buttonSaveWeight);
         buttonDeleteWeight = (Button) findViewById(R.id.buttonDeleteWeight);
+        buttonChart = (Button) findViewById(R.id.buttonChart);
 
         dayEditText = (EditText) findViewById(R.id.dayEditText);
         dayEditText.setFilters(new InputFilter[]{new InputFilterMinMax("1","31")});
@@ -46,7 +48,13 @@ public class WeightActivity extends AppCompatActivity  {
             public void onClick(View view) {
                 startActivity(new Intent(WeightActivity.this, WeightListActivity.class));
 
+            }
+        });
 
+        buttonChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(WeightActivity.this, WeightChart.class));
             }
         });
 

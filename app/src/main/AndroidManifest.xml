@@ -22,6 +22,9 @@
         <activity android:name=".activities.AuthorActivity" />
         <activity android:name=".activities.WeightListActivity" />
         <activity android:name=".activities.CirciutListActivity" />
+        <activity android:name=".WeightChart" />
+        <activity android:name=".CircuitChart" />
+        <activity android:name=".CircuitChart2"></activity>
     </application>
 
 </manifest>
