@@ -32,7 +32,7 @@ public class WeightChart extends AppCompatActivity {
 
         for (Weight wg : weights) {
             data = (float) wg.getWeight();
-            entries.add(new Entry(data ,wg.getId()));
+            entries.add(new Entry(data ,wg.getId()-1));
             labels.add(" ");
     }
 

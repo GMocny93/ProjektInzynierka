@@ -33,7 +33,7 @@ public class CircuitChart extends AppCompatActivity {
 
         for (Circuit ct : circuits) {
         dataChest = (float) ct.getChest();
-        entries.add(new Entry(dataChest, ct.getId()));
+        entries.add(new Entry(dataChest, ct.getId()-1));
         labels.add(" ");
         }
         LineData chartData = new LineData();
