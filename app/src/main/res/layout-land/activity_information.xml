@@ -19,16 +19,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/colorAccent"/>
+
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="387dp"
+        android:layout_width="362dp"
         android:layout_height="227dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSaveData"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10">
 
@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/name"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -64,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/height"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -87,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/weight"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -109,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/targetWeight"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -131,6 +135,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/age"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -160,11 +165,22 @@
 
     <Button
         android:id="@+id/buttonSaveData"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
+
         android:text="@string/saveData"
+
+
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tableLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
 </android.support.constraint.ConstraintLayout>

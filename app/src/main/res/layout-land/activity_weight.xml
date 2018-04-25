@@ -20,7 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/colorAccent"/>
 
     <Button
         android:id="@+id/buttonWeightList"
@@ -30,6 +31,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/weightCircuit"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -55,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/day"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"/>
 
             <EditText
                 android:id="@+id/dayEditText"
@@ -77,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/month"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"/>
 
             <EditText
                 android:id="@+id/monthEditText"
@@ -100,7 +105,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/year"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"/>
 
             <EditText
                 android:id="@+id/yearEditText"
@@ -122,7 +128,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/weight"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"/>
 
             <EditText
                 android:id="@+id/weightEditText"
@@ -143,52 +150,63 @@
 
     <Button
         android:id="@+id/buttonSaveWeight"
-        android:layout_width="130sp"
+        android:layout_width="200sp"
         android:layout_height="45sp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/saveButton"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.323"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/buttonChart" />
 
     <Button
         android:id="@+id/buttonDeleteWeight"
-        android:layout_width="160dp"
+        android:layout_width="150sp"
         android:layout_height="45sp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/deleteButton"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/buttonSaveWeight"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.333" />
 
     <EditText
         android:id="@+id/idEditText"
-        android:layout_width="45dp"
+        android:layout_width="45sp"
         android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/buttonDeleteWeight"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSaveWeight" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSaveWeight"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonChart"
-        android:layout_width="130sp"
+        android:layout_width="200sp"
         android:layout_height="45sp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/chartWeight"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/buttonWeightList" />

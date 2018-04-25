@@ -38,15 +38,15 @@ public class WeightListActivity extends AppCompatActivity {
     }
 
     private void prepareData(DatabaseHandler db) {
-        db.addInformation(new Information("Grzesiek", 184, 120.5, 100.5, 25));
-        db.addWeight(new Weight(2018, 3, 8, 119.5));
-        db.addWeight(new Weight(2018, 4, 10, 129.5));
-        db.addWeight(new Weight(2018, 5, 12, 139.5));
-        db.addWeight(new Weight(2018, 6, 15, 149.5));
-        db.addCircuit(new Circuit(2018, 4, 10, 116.0, 117.5));
-        db.addCircuit(new Circuit(2018, 5, 8, 110.0, 115.6));
-        db.addCircuit(new Circuit(2018, 6, 12, 112.0, 114.7));
-        db.addCircuit(new Circuit(2018, 10, 1, 122.0, 124.7));
+        db.addInformation(new Information("Grzesiek", 184, 105.3, 90, 25));
+        db.addWeight(new Weight(2018, 1, 8, 106.5));
+        db.addWeight(new Weight(2018, 2, 25, 104.5));
+        db.addWeight(new Weight(2018, 3, 12, 109.5));
+        db.addWeight(new Weight(2018, 4, 6, 105.3));
+        db.addCircuit(new Circuit(2018, 1, 8, 116.0, 117.5));
+        db.addCircuit(new Circuit(2018, 2, 25, 110.0, 115.6));
+        db.addCircuit(new Circuit(2018, 3, 12, 112.0, 114.7));
+        db.addCircuit(new Circuit(2018, 4, 6, 117.0, 118.7));
     }
 
 }

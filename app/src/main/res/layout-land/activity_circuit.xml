@@ -7,7 +7,6 @@
     tools:context="com.example.grzesiek.projektinzynierka.activities.CircuitActivity">
 
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -17,6 +16,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/circuitInfo"
         android:textAlignment="center"
+        android:textColor="@color/colorAccent"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,14 +26,16 @@
 
     <Button
         android:id="@+id/buttonWeightList"
-        android:layout_width="211dp"
-        android:layout_height="60sp"
+        android:layout_width="208sp"
+        android:layout_height="50sp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/circuitCircuit"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -41,7 +43,7 @@
         android:id="@+id/tableLayout"
         android:layout_width="340dp"
         android:layout_height="231dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -56,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/day"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -78,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/month"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -101,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/year"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -123,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/chest"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -145,6 +151,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/waist"
                 android:textAlignment="center"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <EditText
@@ -161,29 +168,33 @@
 
     <Button
         android:id="@+id/buttonSaveWeight"
-        android:layout_width="130sp"
+        android:layout_width="208sp"
         android:layout_height="45sp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/saveButton"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/buttonChart" />
 
     <Button
         android:id="@+id/buttonDeleteCircuit"
-        android:layout_width="160sp"
+        android:layout_width="150sp"
         android:layout_height="45sp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/deleteButton"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/buttonSaveWeight" />
 
     <EditText
         android:id="@+id/idEditText"
-        android:layout_width="45dp"
+        android:layout_width="45sp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -200,23 +211,29 @@
 
     <Button
         android:id="@+id/buttonChart"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="100sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/chartChest"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/buttonWeightList" />
 
     <Button
         android:id="@+id/buttonChart2"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="100sp"
+        android:layout_height="60sp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/chartWaist"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonChart"
         app:layout_constraintTop_toBottomOf="@+id/buttonWeightList" />
 
 </android.support.constraint.ConstraintLayout>
